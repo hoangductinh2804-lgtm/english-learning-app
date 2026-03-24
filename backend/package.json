@@ -1,0 +1,28 @@
+{
+  "name": "english-learning-backend",
+  "version": "1.0.0",
+  "description": "Backend for English learning app",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "seed:vocabulary": "node src/scripts/seedVocabulary.js",
+    "check": "node -e \"import('./src/app.js').then(()=>console.log('backend check passed')).catch((err)=>{console.error(err); process.exit(1);})\""
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express-rate-limit": "^7.4.1",
+    "express": "^4.19.2",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "mongoose": "^8.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

@@ -1,0 +1,42 @@
+export const seedVocabularyData = [
+  {
+    word: "library",
+    meaning: "thu vien",
+    pronunciation: "/ˈlaɪ.brer.i/",
+    example: "I study at the library every evening.",
+    topic: "education",
+    level: "beginner",
+  },
+  {
+    word: "appointment",
+    meaning: "cuoc hen",
+    pronunciation: "/əˈpɔɪnt.mənt/",
+    example: "I have a dentist appointment tomorrow.",
+    topic: "daily-life",
+    level: "intermediate",
+  },
+  {
+    word: "sustainable",
+    meaning: "ben vung",
+    pronunciation: "/səˈsteɪ.nə.bəl/",
+    example: "They support sustainable farming methods.",
+    topic: "environment",
+    level: "advanced",
+  },
+  {
+    word: "negotiate",
+    meaning: "dam phan",
+    pronunciation: "/nɪˈɡəʊ.ʃi.eɪt/",
+    example: "We need to negotiate a better contract.",
+    topic: "business",
+    level: "intermediate",
+  },
+  {
+    word: "headline",
+    meaning: "tieu de",
+    pronunciation: "/ˈhed.laɪn/",
+    example: "That headline caught my attention.",
+    topic: "media",
+    level: "beginner",
+  },
+];

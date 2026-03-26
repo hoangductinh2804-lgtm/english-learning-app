@@ -11,5 +11,14 @@ services:
         value: production
       - key: PORT
         value: 5000
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
       - key: JWT_EXPIRES_IN
         value: 7d
+      - key: CLIENT_URLS
+        sync: false
+      - key: CORS_ALLOW_CREDENTIALS
+        value: "false"
+    healthCheckPath: /api/health

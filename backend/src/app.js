@@ -7,6 +7,8 @@ import morgan from "morgan";
 import rateLimit from "express-rate-limit";
 import advancedRoutes from "./routes/advancedRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import conversationRoutes from "./routes/conversationRoutes.js";
+import flashcardRoutes from "./routes/flashcardRoutes.js";
 import gamificationRoutes from "./routes/gamificationRoutes.js";
 import grammarRoutes from "./routes/grammarRoutes.js";
 import progressRoutes from "./routes/progressRoutes.js";
@@ -72,6 +74,8 @@ app.use("/api/grammar", grammarRoutes);
 app.use("/api/questions", questionRoutes);
 app.use("/api/gamification", gamificationRoutes);
 app.use("/api/advanced", advancedRoutes);
+app.use("/api/flashcards", flashcardRoutes);
+app.use("/api/conversations", conversationRoutes);
 
 app.use("/api/*", (_req, res) => {
   res.status(404).json({ message: "API route not found" });

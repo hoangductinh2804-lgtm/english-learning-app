@@ -186,3 +186,19 @@ export function reviewVocabulary(token, vocabularyId, payload) {
     body: JSON.stringify(payload),
   });
 }
+
+export function getFlashcardCategories() {
+  return request("/flashcards/categories", { method: "GET" });
+}
+
+export function getFlashcardsByCategory(categoryId) {
+  return request(`/flashcards/categories/${categoryId}/cards`, { method: "GET" });
+}
+
+export function getConversations() {
+  return request("/conversations", { method: "GET" });
+}
+
+export function getConversationById(id) {
+  return request(`/conversations/${id}`, { method: "GET" });
+}

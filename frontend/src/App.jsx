@@ -11,6 +11,10 @@ const ExercisesPage = lazy(() => import("./pages/ExercisesPage"));
 const QuizResultPage = lazy(() => import("./pages/QuizResultPage"));
 const GamificationPage = lazy(() => import("./pages/GamificationPage"));
 const AdvancedFeaturesPage = lazy(() => import("./pages/AdvancedFeaturesPage"));
+const FlashcardCategoriesPage = lazy(() => import("./pages/FlashcardCategoriesPage"));
+const FlashcardLearningPage = lazy(() => import("./pages/FlashcardLearningPage"));
+const ListeningPracticePage = lazy(() => import("./pages/ListeningPracticePage"));
+const ConversationPracticePage = lazy(() => import("./pages/ConversationPracticePage"));
 
 function App() {
   return (
@@ -72,6 +76,38 @@ function App() {
           element={
             <ProtectedRoute>
               <AdvancedFeaturesPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/flashcards"
+          element={
+            <ProtectedRoute>
+              <FlashcardCategoriesPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/flashcards/:categoryId"
+          element={
+            <ProtectedRoute>
+              <FlashcardLearningPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/listening"
+          element={
+            <ProtectedRoute>
+              <ListeningPracticePage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/conversation"
+          element={
+            <ProtectedRoute>
+              <ConversationPracticePage />
             </ProtectedRoute>
           }
         />

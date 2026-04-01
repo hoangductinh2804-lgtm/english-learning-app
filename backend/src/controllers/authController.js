@@ -3,6 +3,10 @@ import jwt from "jsonwebtoken";
 import { User } from "../models/User.js";
 import { applyGamification } from "../utils/gamification.js";
 
+// Cap todayMinutes at twice the daily goal so a user can't inflate their
+// progress counter beyond a reasonable overflow buffer.
+const MAX_DAILY_GOAL_MULTIPLIER = 2;
+
 function signToken(userId) {
   return jwt.sign({ userId }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN || "7d",
@@ -174,7 +178,7 @@ export async function logActivity(req, res) {
       user.lastGoalDate = today;
     }
 
-    user.todayMinutes = Math.min((user.todayMinutes || 0) + mins, user.dailyGoal * 2);
+    user.todayMinutes = Math.min((user.todayMinutes || 0) + mins, user.dailyGoal * MAX_DAILY_GOAL_MULTIPLIER);
 
     await applyGamification(user, { pointsEarned: Math.ceil(mins / 5) });
 

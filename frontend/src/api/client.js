@@ -161,11 +161,8 @@ export function getReadingArticles() {
   return request("/advanced/reading", { method: "GET" });
 }
 
-export function getConversations(difficulty) {
-  const path = difficulty
-    ? `/advanced/conversations?difficulty=${encodeURIComponent(difficulty)}`
-    : "/advanced/conversations";
-  return request(path, { method: "GET" });
+export function getConversations() {
+  return request("/advanced/conversations", { method: "GET" });
 }
 
 export function correctWriting(text) {

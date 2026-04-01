@@ -23,7 +23,7 @@ function DashboardPage() {
         </p>
 
         <div className="daily-goal-section">
-          <h2>Today&apos;s Goal</h2>
+          <h2>Today&#39;s Goal</h2>
           <div className="progress-ring-wrap">
             <svg className="progress-ring" viewBox="0 0 120 120" aria-label={`${progressPercent}% of daily goal`}>
               <circle

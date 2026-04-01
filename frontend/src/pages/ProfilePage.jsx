@@ -29,6 +29,11 @@ function ProfilePage() {
       const payload = { fullName, level, dailyGoal: Number(dailyGoal) };
 
       if (newPassword) {
+        if (newPassword.length < 6) {
+          setError("New password must be at least 6 characters.");
+          setSubmitting(false);
+          return;
+        }
         payload.currentPassword = currentPassword;
         payload.newPassword = newPassword;
       }
@@ -121,7 +126,6 @@ function ProfilePage() {
                 type="password"
                 value={newPassword}
                 onChange={(event) => setNewPassword(event.target.value)}
-                minLength={newPassword ? 6 : 0}
                 autoComplete="new-password"
               />
             </label>

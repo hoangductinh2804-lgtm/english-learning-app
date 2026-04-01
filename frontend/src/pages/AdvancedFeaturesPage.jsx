@@ -2,18 +2,22 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   correctWriting,
+  getConversations,
   getListeningTracks,
   getReadingArticles,
   getSpeakingPrompts,
 } from "../api/client";
 
-const FEATURE_TABS = ["listening", "speaking", "reading", "writing"];
+const FEATURE_TABS = ["listening", "speaking", "reading", "writing", "conversation"];
+const DIFFICULTY_TABS = ["easy", "medium", "hard"];
 
 function AdvancedFeaturesPage() {
   const [activeTab, setActiveTab] = useState("listening");
   const [tracks, setTracks] = useState([]);
   const [prompts, setPrompts] = useState([]);
   const [articles, setArticles] = useState([]);
+  const [conversations, setConversations] = useState([]);
+  const [activeDifficulty, setActiveDifficulty] = useState("easy");
   const [selectedPrompt, setSelectedPrompt] = useState("");
   const [speechText, setSpeechText] = useState("");
   const [speaking, setSpeaking] = useState(false);
@@ -29,16 +33,21 @@ function AdvancedFeaturesPage() {
     return Boolean(window.SpeechRecognition || window.webkitSpeechRecognition);
   }, []);
 
+  const filteredConversations = useMemo(() => {
+    return conversations.filter((c) => c.difficulty === activeDifficulty);
+  }, [conversations, activeDifficulty]);
+
   useEffect(() => {
     async function fetchAdvancedData() {
       setLoading(true);
       setError("");
 
       try {
-        const [listeningData, promptData, readingData] = await Promise.all([
+        const [listeningData, promptData, readingData, conversationData] = await Promise.all([
           getListeningTracks(),
           getSpeakingPrompts(),
           getReadingArticles(),
+          getConversations(),
         ]);
 
         setTracks(listeningData.tracks || []);
@@ -46,6 +55,7 @@ function AdvancedFeaturesPage() {
         setPrompts(nextPrompts);
         setSelectedPrompt(nextPrompts[0] || "");
         setArticles(readingData.articles || []);
+        setConversations(conversationData.conversations || []);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -281,6 +291,52 @@ function AdvancedFeaturesPage() {
               ) : null}
             </div>
           ) : null}
+        </section>
+      ) : null}
+
+      {!loading && activeTab === "conversation" ? (
+        <section className="exercise-block">
+          <h2>Conversation Practice</h2>
+          <p>Read dialogues, study translations, and practice speaking lines aloud.</p>
+
+          <div className="advanced-tab-row">
+            {DIFFICULTY_TABS.map((diff) => (
+              <button
+                key={diff}
+                className={activeDifficulty === diff ? "active" : ""}
+                onClick={() => setActiveDifficulty(diff)}
+              >
+                {diff.charAt(0).toUpperCase() + diff.slice(1)}
+              </button>
+            ))}
+          </div>
+
+          {filteredConversations.length === 0 ? (
+            <p>No conversations available for this level.</p>
+          ) : null}
+
+          <div className="advanced-card-grid">
+            {filteredConversations.map((conv) => (
+              <article key={conv.id} className="advanced-card conversation-card">
+                <h3>{conv.title}</h3>
+                <span className={`difficulty-badge difficulty-${conv.difficulty}`}>
+                  {conv.difficulty}
+                </span>
+                <div className="dialogue-list">
+                  {conv.dialogues.map((line, idx) => (
+                    <div
+                      key={idx}
+                      className={`dialogue-line dialogue-line--${idx % 2 === 0 ? "left" : "right"}`}
+                    >
+                      <strong className="dialogue-speaker">{line.speaker}:</strong>
+                      <span className="dialogue-text">{line.text}</span>
+                      <span className="dialogue-translation">{line.translation}</span>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
       ) : null}
     </main>

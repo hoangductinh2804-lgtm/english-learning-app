@@ -11,6 +11,7 @@ const ExercisesPage = lazy(() => import("./pages/ExercisesPage"));
 const QuizResultPage = lazy(() => import("./pages/QuizResultPage"));
 const GamificationPage = lazy(() => import("./pages/GamificationPage"));
 const AdvancedFeaturesPage = lazy(() => import("./pages/AdvancedFeaturesPage"));
+const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 
 function App() {
   return (
@@ -72,6 +73,14 @@ function App() {
           element={
             <ProtectedRoute>
               <AdvancedFeaturesPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <ProfilePage />
             </ProtectedRoute>
           }
         />

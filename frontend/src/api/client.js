@@ -161,10 +161,37 @@ export function getReadingArticles() {
   return request("/advanced/reading", { method: "GET" });
 }
 
+export function getConversations(difficulty) {
+  const path = difficulty
+    ? `/advanced/conversations?difficulty=${encodeURIComponent(difficulty)}`
+    : "/advanced/conversations";
+  return request(path, { method: "GET" });
+}
+
 export function correctWriting(text) {
   return request("/advanced/writing/correct", {
     method: "POST",
     body: JSON.stringify({ text }),
+  });
+}
+
+export function updateProfile(token, payload) {
+  return request("/auth/profile", {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(payload),
+  });
+}
+
+export function logActivity(token, minutes) {
+  return request("/auth/activity", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ minutes }),
   });
 }
 

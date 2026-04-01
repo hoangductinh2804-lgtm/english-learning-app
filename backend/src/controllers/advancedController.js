@@ -1,4 +1,5 @@
 import {
+  conversations,
   listeningTracks,
   readingArticles,
   speakingPrompts,
@@ -68,6 +69,14 @@ export async function getSpeakingPrompts(_req, res) {
 
 export async function getReadingArticles(_req, res) {
   return res.status(200).json({ count: readingArticles.length, articles: readingArticles });
+}
+
+export async function getConversations(req, res) {
+  const { difficulty } = req.query;
+  const filtered = difficulty
+    ? conversations.filter((c) => c.difficulty === difficulty)
+    : conversations;
+  return res.status(200).json({ count: filtered.length, conversations: filtered });
 }
 
 export async function correctWriting(req, res) {

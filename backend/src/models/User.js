@@ -36,6 +36,21 @@ const userSchema = new mongoose.Schema(
       default: 0,
       min: 0,
     },
+    dailyGoal: {
+      type: Number,
+      default: 20,
+      min: 5,
+      max: 120,
+    },
+    todayMinutes: {
+      type: Number,
+      default: 0,
+      min: 0,
+    },
+    lastGoalDate: {
+      type: Date,
+      default: null,
+    },
     lastActiveDate: {
       type: Date,
       default: null,

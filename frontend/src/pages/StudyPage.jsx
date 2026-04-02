@@ -8,6 +8,15 @@ import {
   toggleRemembered,
 } from "../lib/learning";
 
+function slugify(text) {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
+
 export default function StudyPage() {
   const { slug } = useParams();
   const [categories, setCategories] = useState([]);
@@ -40,7 +49,7 @@ export default function StudyPage() {
   const currentId = currentWord?._id;
   const isRemembered = currentId ? !!store.remembered[currentId] : false;
   const isLiked = currentId ? !!store.liked[currentId] : false;
-  const imageSrc = currentWord?.image || category?.cover || "";
+  const imageSrc = currentWord?.image || (currentWord?.word ? `/images/vocabulary-cards/${slugify(currentWord.word)}.svg` : category?.cover || "");
 
   useEffect(() => {
     setIndex(0);
@@ -86,7 +95,7 @@ export default function StudyPage() {
         <Link className="back-link" to="/flashcards">
           ←
         </Link>
-        <h1>{category?.title || "Daily Life"}</h1>
+        <h1>{category?.title || "Cuộc sống hằng ngày"}</h1>
         <div className="header-icons">
           {isLiked ? "❤" : "♡"} {isRemembered ? "✓" : "○"}
         </div>
@@ -105,7 +114,18 @@ export default function StudyPage() {
         <button className="like-btn" onClick={likeCurrent} type="button" aria-label="Like card">
           {isLiked ? "❤" : "♡"}
         </button>
-        {imageSrc ? <img alt={currentWord?.word || "flashcard"} className="flashcard-image" src={imageSrc} /> : null}
+        {imageSrc ? (
+          <img
+            alt={currentWord?.word || "flashcard"}
+            className="flashcard-image"
+            src={imageSrc}
+            onError={(event) => {
+              if (category?.cover && event.currentTarget.src !== category.cover) {
+                event.currentTarget.src = category.cover;
+              }
+            }}
+          />
+        ) : null}
         <h2>{currentWord?.word || "No word"}</h2>
         {showMeaning && currentWord ? (
           <div className="word-meaning-block">
@@ -114,7 +134,7 @@ export default function StudyPage() {
             {currentWord.example ? <p className="word-example">{currentWord.example}</p> : null}
           </div>
         ) : (
-          <p className="word-meaning hint">Cham vao the de hien nghia</p>
+          <p className="word-meaning hint">Chạm vào thẻ để hiện nghĩa</p>
         )}
         <button className="speak-btn" onClick={speakCurrent} type="button" aria-label="Speak word">
           🔊
@@ -123,18 +143,18 @@ export default function StudyPage() {
 
       <div className="study-controls">
         <button onClick={prevCard} type="button">
-          ◀ Truoc
+          ◀ Trước
         </button>
         <button className="remember" onClick={rememberCurrent} type="button">
-          {isRemembered ? "✓ Da nho" : "Da hoc"}
+          {isRemembered ? "✓ Đã nhớ" : "Đã học"}
         </button>
         <button onClick={nextCard} type="button">
-          Tiep theo ▶
+          Tiếp theo ▶
         </button>
       </div>
 
       <button className="voice-btn" onClick={speakCurrent} type="button">
-        🎙 Luyen noi
+        🎙 Luyện nói
       </button>
     </main>
   );

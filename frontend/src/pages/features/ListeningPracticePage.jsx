@@ -2,6 +2,15 @@ import { useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { listeningLessons } from "../../data/featureContent";
 
+function slugify(text) {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
+
 const topicImages = {
   "Daily Life": "/images/topics/daily-life.svg",
   "Food & Drink": "/images/topics/food-drink.svg",
@@ -55,7 +64,7 @@ export default function ListeningPracticePage() {
 
   return (
     <main className="page feature-page">
-      <h1 className="feature-title">Luyen Nghe</h1>
+      <h1 className="feature-title">Luyện nghe</h1>
       <div className="lesson-tabs">
         {activeLessons.map((item, idx) => (
           <button
@@ -75,7 +84,7 @@ export default function ListeningPracticePage() {
       <section className="content-card">
         <h2>{lesson.title}</h2>
         <button className="primary-btn" onClick={speakLesson} type="button">
-          Nghe doan hoi thoai
+            Nghe đoạn hội thoại
         </button>
         <ul className="script-list">
           {lesson.script.map((line) => (
@@ -85,7 +94,7 @@ export default function ListeningPracticePage() {
       </section>
 
       <section className="content-card">
-        <h3>Cau hoi nghe hieu</h3>
+        <h3>Câu hỏi nghe hiểu</h3>
         {lesson.questions.map((question, idx) => (
           <article className="quiz-item" key={question.prompt}>
             <p>{question.prompt}</p>
@@ -104,15 +113,15 @@ export default function ListeningPracticePage() {
           </article>
         ))}
         <p className="score-text">
-          Diem hien tai: {score}/{lesson.questions.length}
+          Điểm hiện tại: {score}/{lesson.questions.length}
         </p>
       </section>
 
       <section className="content-card">
-        <h3>Tu vung theo bai nghe</h3>
+        <h3>Từ vựng theo bài nghe</h3>
         <div className="vocab-list">
           {lesson.vocabulary.map((item) => {
-            const imageSrc = item.image || getTopicImage(lesson.topic);
+            const imageSrc = item.image || `/images/vocabulary-cards/${slugify(item.word)}.svg` || getTopicImage(lesson.topic);
             return (
               <article className="vocab-item vocab-with-image" key={item.word}>
                 {imageSrc && (
@@ -120,6 +129,9 @@ export default function ListeningPracticePage() {
                     src={imageSrc}
                     alt={item.word}
                     className="vocab-image"
+                    onError={(event) => {
+                      event.currentTarget.src = getTopicImage(lesson.topic);
+                    }}
                   />
                 )}
                 <div className="vocab-content">

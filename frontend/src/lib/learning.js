@@ -20,7 +20,7 @@ function createFallbackWord(topicSlug, word, index) {
     ipa: word.ipa || "",
     meaning: word.meaning || "",
     example: word.example || "",
-    image: word.image || "",
+    image: word.image || `/images/vocabulary-cards/${slugify(word.word)}.svg`,
   };
 }
 

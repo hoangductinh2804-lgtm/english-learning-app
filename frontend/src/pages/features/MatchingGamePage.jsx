@@ -4,14 +4,25 @@ import { matchingPairs } from "../../data/featureContent";
 export default function MatchingGamePage() {
   const [selectedLeft, setSelectedLeft] = useState(null);
   const [matched, setMatched] = useState({});
+  const [query, setQuery] = useState("");
+
+  const visiblePairs = useMemo(() => {
+    const normalized = query.trim().toLowerCase();
+    if (!normalized) {
+      return matchingPairs.slice(0, 14);
+    }
+    return matchingPairs.filter(
+      (item) => item.left.includes(normalized) || item.right.includes(normalized)
+    );
+  }, [query]);
 
   const rightWords = useMemo(() => {
-    return [...matchingPairs].sort((a, b) => a.right.localeCompare(b.right));
-  }, []);
+    return [...visiblePairs].sort((a, b) => a.right.localeCompare(b.right));
+  }, [visiblePairs]);
 
   function chooseRight(rightValue) {
     if (!selectedLeft) return;
-    const pair = matchingPairs.find((item) => item.left === selectedLeft);
+    const pair = visiblePairs.find((item) => item.left === selectedLeft);
     if (pair?.right === rightValue) {
       setMatched((prev) => ({ ...prev, [selectedLeft]: true }));
     }
@@ -25,9 +36,17 @@ export default function MatchingGamePage() {
       <h1 className="feature-title">Ghep The</h1>
       <section className="content-card">
         <p>Chon mot tu tieng Anh o cot trai, sau do chon nghia dung o cot phai.</p>
+        <label className="search-box plain">
+          <span>⌕</span>
+          <input
+            onChange={(event) => setQuery(event.target.value.toLowerCase())}
+            placeholder="Tim tu vung..."
+            value={query}
+          />
+        </label>
         <div className="matching-grid">
           <div>
-            {matchingPairs.map((pair) => (
+            {visiblePairs.map((pair) => (
               <button
                 key={pair.left}
                 className={`match-chip ${selectedLeft === pair.left ? "active" : ""} ${
@@ -54,7 +73,7 @@ export default function MatchingGamePage() {
           </div>
         </div>
         <p className="score-text">
-          Da ghep dung: {score}/{matchingPairs.length}
+          Da ghep dung: {score}/{visiblePairs.length}
         </p>
       </section>
     </main>

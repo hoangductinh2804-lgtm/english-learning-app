@@ -92,6 +92,22 @@ export default function ListeningPracticePage() {
           Diem hien tai: {score}/{lesson.questions.length}
         </p>
       </section>
+
+      <section className="content-card">
+        <h3>Tu vung theo bai nghe</h3>
+        <div className="vocab-list">
+          {lesson.vocabulary.map((item) => (
+            <article className="vocab-item" key={item.word}>
+              <p className="vocab-head">
+                <strong>{item.word}</strong>
+                <span>{item.ipa}</span>
+              </p>
+              <p className="vocab-meaning">{item.meaning}</p>
+              <p className="vocab-example">{item.example}</p>
+            </article>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

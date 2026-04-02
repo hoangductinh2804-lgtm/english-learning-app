@@ -21,6 +21,14 @@ export default function PronunciationPage() {
           <button className="primary-btn" onClick={() => speak(item.sample)} type="button">
             Phat am cau mau
           </button>
+          <h3>Word Drills</h3>
+          <div className="chip-cloud">
+            {item.drills.map((drill) => (
+              <button className="chip-word" key={drill} onClick={() => speak(drill)} type="button">
+                {drill}
+              </button>
+            ))}
+          </div>
         </section>
       ))}
     </main>

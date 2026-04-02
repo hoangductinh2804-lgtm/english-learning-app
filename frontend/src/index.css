@@ -278,6 +278,12 @@ input {
   background: transparent;
 }
 
+.search-box.plain {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #dde1f0;
+}
+
 .chips-row {
   display: flex;
   flex-wrap: wrap;
@@ -617,6 +623,73 @@ input {
 .match-chip.done {
   border-color: #6ac598;
   background: #e6f9ee;
+}
+
+.vocab-list {
+  display: grid;
+  gap: 8px;
+}
+
+.vocab-item {
+  border: 1px solid #e0e4f4;
+  border-radius: 12px;
+  padding: 8px 10px;
+  background: #fafbff;
+}
+
+.vocab-head {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: #2f3866;
+}
+
+.vocab-head span {
+  font-size: 12px;
+  color: #6671a5;
+}
+
+.vocab-meaning,
+.vocab-example {
+  margin: 4px 0 0;
+  color: #3b4064;
+}
+
+.vocab-example {
+  font-size: 13px;
+  color: #5c638e;
+}
+
+.mini-vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.mini-vocab-grid article {
+  border: 1px solid #dfe3f4;
+  border-radius: 10px;
+  padding: 8px;
+  background: #f8f9ff;
+}
+
+.mini-vocab-grid p {
+  margin: 4px 0 0;
+}
+
+.chip-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip-word {
+  border: 1px solid #d0d6f0;
+  background: #f3f5ff;
+  color: #394274;
+  border-radius: 999px;
+  padding: 6px 10px;
 }
 
 @media (max-width: 720px) {

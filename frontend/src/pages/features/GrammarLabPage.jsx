@@ -60,6 +60,18 @@ export default function GrammarLabPage() {
           <p className="score-text">{isCorrect ? "Chinh xac" : "Chua dung, thu lai"}</p>
         ) : null}
       </section>
+
+      <section className="content-card">
+        <h3>Tu vung can nho</h3>
+        <div className="mini-vocab-grid">
+          {lesson.keyVocabulary.map((item) => (
+            <article key={item.word}>
+              <strong>{item.word}</strong>
+              <p>{item.meaning}</p>
+            </article>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

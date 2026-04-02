@@ -41,6 +41,14 @@ export default function VoiceToVoicePage() {
             <li key={item}>{item}</li>
           ))}
         </ul>
+        <h3>Tu vung trong tinh huong</h3>
+        <div className="chip-cloud">
+          {scenario.vocabulary.map((item) => (
+            <button className="chip-word" key={item} onClick={() => speakPrompt()} type="button">
+              {item}
+            </button>
+          ))}
+        </div>
       </section>
     </main>
   );

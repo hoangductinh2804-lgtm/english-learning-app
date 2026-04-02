@@ -59,6 +59,22 @@ export default function ReadingPracticePage() {
           Diem doc hieu: {score}/{article.questions.length}
         </p>
       </section>
+
+      <section className="content-card">
+        <h3>Glossary</h3>
+        <div className="vocab-list">
+          {article.vocabulary.map((item) => (
+            <article className="vocab-item" key={item.word}>
+              <p className="vocab-head">
+                <strong>{item.word}</strong>
+                <span>{item.ipa}</span>
+              </p>
+              <p className="vocab-meaning">{item.meaning}</p>
+              <p className="vocab-example">{item.example}</p>
+            </article>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

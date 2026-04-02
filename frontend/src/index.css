@@ -330,6 +330,14 @@ input {
   border: 1px solid var(--border-soft);
 }
 
+.category-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 8px;
+}
+
 .category-icon {
   font-size: 32px;
 }
@@ -470,6 +478,145 @@ input {
 
 .bottom-nav-item.active {
   color: #fff;
+}
+
+.feature-title {
+  margin: 0 0 10px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.lesson-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.lesson-tabs button {
+  border: 1px solid #cfd2ea;
+  background: #f6f4fa;
+  color: #3f4567;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 600;
+}
+
+.lesson-tabs button.active {
+  background: #4452b8;
+  color: #fff;
+  border-color: #4452b8;
+}
+
+.content-card {
+  margin-bottom: 12px;
+  background: #fff;
+  border: 1px solid #e5e8f6;
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.content-card h2,
+.content-card h3 {
+  margin: 0 0 8px;
+}
+
+.script-list {
+  margin: 0;
+  padding-left: 18px;
+  color: #2f3350;
+  line-height: 1.5;
+}
+
+.primary-btn {
+  border: 0;
+  background: #4452b8;
+  color: #fff;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+
+.quiz-item {
+  border-top: 1px dashed #d9dced;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.quiz-item p {
+  margin: 0 0 8px;
+}
+
+.quiz-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quiz-options.vertical {
+  flex-direction: column;
+}
+
+.quiz-options button {
+  border: 1px solid #ccd1ea;
+  background: #f4f6ff;
+  color: #2d3355;
+  border-radius: 10px;
+  padding: 7px 10px;
+}
+
+.quiz-options button.active {
+  background: #e0e6ff;
+  border-color: #8591e6;
+}
+
+.score-text {
+  margin: 10px 0 0;
+  font-weight: 700;
+  color: #414f9e;
+}
+
+.article-body {
+  margin: 0;
+  line-height: 1.6;
+  color: #3a4062;
+}
+
+.level-badge {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: #eef0ff;
+  color: #4251a8;
+  font-weight: 600;
+}
+
+.matching-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.match-chip {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 8px;
+  border: 1px solid #cfd4ed;
+  background: #f6f7ff;
+  color: #2f3559;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.match-chip.active {
+  border-color: #7b88df;
+  background: #eaedff;
+}
+
+.match-chip.done {
+  border-color: #6ac598;
+  background: #e6f9ee;
 }
 
 @media (max-width: 720px) {

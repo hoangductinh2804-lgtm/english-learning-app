@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="380" viewBox="0 0 600 380" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16A085"/>
+      <stop offset="100%" stop-color="#2C3E50"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" rx="40" fill="url(#bg)"/>
+  <circle cx="110" cy="120" r="48" fill="#fff" fill-opacity="0.13"/>
+  <circle cx="500" cy="280" r="58" fill="#fff" fill-opacity="0.1"/>
+  <text x="300" y="170" text-anchor="middle" fill="#fff" font-family="Arial" font-size="54" font-weight="700">Jobs &amp; Occupations</text>
+  <text x="300" y="252" text-anchor="middle" fill="#fff" font-family="Arial" font-size="30">Speak about work and careers</text>
+</svg>

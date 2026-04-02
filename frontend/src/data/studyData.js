@@ -2,6 +2,7 @@ export const categories = [
   {
     slug: "daily-life",
     icon: "🧺",
+    cover: "/images/topics/daily-life.svg",
     title: "Daily Life",
     description: "Tu vung thong dung ve sinh hoat hang ngay",
     flashcardsTotal: 350,
@@ -10,6 +11,7 @@ export const categories = [
   {
     slug: "food-drink",
     icon: "🍔",
+    cover: "/images/topics/food-drink.svg",
     title: "Food & Drink",
     description: "Ten cac mon an, do uong va tu vung lien quan",
     flashcardsTotal: 119,
@@ -18,6 +20,7 @@ export const categories = [
   {
     slug: "clothes-fashion",
     icon: "👕",
+    cover: "/images/topics/clothes-fashion.svg",
     title: "Clothes & Fashion",
     description: "Tu vung ve trang phuc va phong cach thoi trang",
     flashcardsTotal: 118,
@@ -26,6 +29,7 @@ export const categories = [
   {
     slug: "jobs-occupations",
     icon: "💼",
+    cover: "/images/topics/jobs-occupations.svg",
     title: "Jobs & Occupations",
     description: "Ten goi va mo ta cac nghe nghiep pho bien",
     flashcardsTotal: 98,
@@ -36,12 +40,12 @@ export const categories = [
 export const quickPractice = [
   { label: "Bo the", icon: "🃏", path: "/flashcards" },
   { label: "Luyen Nghe", icon: "🎧", path: "/listening" },
-  { label: "Luyen Doc", icon: "📖", path: "/flashcards" },
-  { label: "Ngu Phap", icon: "📚", path: "/flashcards" },
-  { label: "Ghep The", icon: "🧩", path: "/flashcards" },
-  { label: "Cong cu", icon: "🧰", path: "/" },
-  { label: "Ngu am", icon: "📣", path: "/listening" },
-  { label: "Voice to Voice", icon: "🗣", path: "/study/daily-life" },
+  { label: "Luyen Doc", icon: "📖", path: "/reading" },
+  { label: "Ngu Phap", icon: "📚", path: "/grammar" },
+  { label: "Ghep The", icon: "🧩", path: "/matching" },
+  { label: "Cong cu", icon: "🧰", path: "/tools" },
+  { label: "Ngu am", icon: "📣", path: "/pronunciation" },
+  { label: "Voice to Voice", icon: "🗣", path: "/voice" },
 ];
 
 export const studyDecks = {

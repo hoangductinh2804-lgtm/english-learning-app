@@ -62,6 +62,10 @@ export default function CategoryPage({ mode }) {
   function openRandomCategory() {
     if (visible.length === 0) return;
     const randomIndex = Math.floor(Math.random() * visible.length);
+    if (mode === "listening") {
+      navigate(`/listening/practice/${visible[randomIndex].slug}`);
+      return;
+    }
     navigate(`/study/${visible[randomIndex].slug}`);
   }
 
@@ -121,8 +125,11 @@ export default function CategoryPage({ mode }) {
           const total =
             progress.total || (mode === "listening" ? item.listeningTotal : item.flashcardsTotal);
 
+          const detailRoute = mode === "listening" ? `/listening/practice/${item.slug}` : `/study/${item.slug}`;
+
           return (
-            <Link className="category-card" key={item.slug} to={`/study/${item.slug}`}>
+            <Link className="category-card" key={item.slug} to={detailRoute}>
+              {item.cover ? <img alt={item.title} className="category-cover" src={item.cover} /> : null}
               <span className="category-icon">{item.icon}</span>
               <h2>{item.title}</h2>
               <p>{item.description}</p>

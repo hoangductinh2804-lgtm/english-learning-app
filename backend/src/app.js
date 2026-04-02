@@ -25,6 +25,10 @@ const allowedOrigins = (process.env.CLIENT_URLS || process.env.CLIENT_URL || "ht
   .map((origin) => origin.trim())
   .filter(Boolean);
 
+function isLocalDevOrigin(origin) {
+  return /^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin);
+}
+
 const apiLimiter = rateLimit({
   windowMs: Number(process.env.RATE_LIMIT_WINDOW_MS || 15 * 60 * 1000),
   max: Number(process.env.RATE_LIMIT_MAX_REQUESTS || 300),
@@ -44,7 +48,7 @@ app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev"));
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (!origin || allowedOrigins.includes(origin) || isLocalDevOrigin(origin)) {
         callback(null, true);
         return;
       }

@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 
 const items = [
-  { to: "/", icon: "⌂", label: "Trang chu" },
-  { to: "/flashcards", icon: "▦", label: "Kho bai" },
-  { to: "/listening", icon: "◉", label: "Luyen nghe" },
-  { to: "/study/daily-life", icon: "◎", label: "Luyen noi" },
+  { to: "/", icon: "⌂", label: "Trang chủ" },
+  { to: "/flashcards", icon: "▦", label: "Kho bài" },
+  { to: "/listening", icon: "◉", label: "Luyện nghe" },
+  { to: "/writing", icon: "✍", label: "Luyện viết" },
 ];
 
 export default function BottomNav() {

@@ -2,6 +2,22 @@ import { useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { listeningLessons } from "../../data/featureContent";
 
+// Vocabulary images mapping
+const vocabularyImages = {
+  routine: "routine",
+  breakfast: "breakfast",
+  productive: "productive",
+  commute: "commute",
+  grilled: "grilled",
+  salad: "salad",
+  dessert: "dessert",
+};
+
+function getVocabImage(word) {
+  const key = word.toLowerCase().replace(/\s+/g, "-");
+  return vocabularyImages[key] || null;
+}
+
 export default function ListeningPracticePage() {
   const { slug } = useParams();
   const [lessonIndex, setLessonIndex] = useState(0);
@@ -96,16 +112,28 @@ export default function ListeningPracticePage() {
       <section className="content-card">
         <h3>Tu vung theo bai nghe</h3>
         <div className="vocab-list">
-          {lesson.vocabulary.map((item) => (
-            <article className="vocab-item" key={item.word}>
-              <p className="vocab-head">
-                <strong>{item.word}</strong>
-                <span>{item.ipa}</span>
-              </p>
-              <p className="vocab-meaning">{item.meaning}</p>
-              <p className="vocab-example">{item.example}</p>
-            </article>
-          ))}
+          {lesson.vocabulary.map((item) => {
+            const imgFile = getVocabImage(item.word);
+            return (
+              <article className="vocab-item vocab-with-image" key={item.word}>
+                {imgFile && (
+                  <img
+                    src={`/images/vocabulary/${imgFile}.svg`}
+                    alt={item.word}
+                    className="vocab-image"
+                  />
+                )}
+                <div className="vocab-content">
+                  <p className="vocab-head">
+                    <strong>{item.word}</strong>
+                    <span>{item.ipa}</span>
+                  </p>
+                  <p className="vocab-meaning">{item.meaning}</p>
+                  <p className="vocab-example">{item.example}</p>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
     </main>

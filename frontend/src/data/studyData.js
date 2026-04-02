@@ -41,6 +41,7 @@ export const quickPractice = [
   { label: "Bo the", icon: "🃏", path: "/flashcards" },
   { label: "Luyen Nghe", icon: "🎧", path: "/listening" },
   { label: "Luyen Doc", icon: "📖", path: "/reading" },
+  { label: "Luyen Viet", icon: "✍", path: "/writing" },
   { label: "Ngu Phap", icon: "📚", path: "/grammar" },
   { label: "Ghep The", icon: "🧩", path: "/matching" },
   { label: "Cong cu", icon: "🧰", path: "/tools" },

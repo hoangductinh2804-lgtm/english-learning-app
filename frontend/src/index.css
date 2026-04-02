@@ -637,6 +637,26 @@ input {
   background: #fafbff;
 }
 
+.vocab-item.vocab-with-image {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.vocab-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.vocab-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .vocab-head {
   margin: 0;
   display: flex;
@@ -690,6 +710,711 @@ input {
   color: #394274;
   border-radius: 999px;
   padding: 6px 10px;
+}
+
+/* Writing Page Styles */
+.tab-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  background: #f3f1f8;
+  padding: 6px;
+  border-radius: 12px;
+}
+
+.tab-btn {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  color: #6b6885;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.tab-btn.active {
+  background: #fff;
+  color: #4352b8;
+}
+
+.writing-section,
+.samples-section,
+.phrases-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.writing-container {
+  border: 2px solid #d9d8e8;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.writing-textarea {
+  width: 100%;
+  min-height: 200px;
+  border: 0;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+  background: #fff;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #4352b8, #7686d9);
+  border-radius: 14px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.writing-analysis {
+  background: #f8f7fc;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.writing-analysis h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.analysis-box {
+  background: #fff;
+  border: 1px solid #e5e4ef;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.analysis-box p {
+  margin: 0 0 8px;
+}
+
+.user-text-display {
+  color: #3a4062;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 8px 0 0 !important;
+}
+
+.suggestions-box {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.suggestions-box p {
+  margin: 6px 0;
+  font-size: 13px;
+}
+
+.vocabulary-from-text {
+  margin-top: 10px;
+}
+
+.vocabulary-from-text h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.vocab-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.vocab-tag {
+  display: inline-block;
+  background: #e0e4ff;
+  color: #4352b8;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.samples-list {
+  display: grid;
+  gap: 8px;
+}
+
+.sample-card {
+  background: #f3f1f8;
+  border: 2px solid #e5e4ef;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sample-card:active {
+  transform: scale(0.98);
+}
+
+.sample-card.active {
+  border-color: #4352b8;
+  background: #f0ecff;
+}
+
+.sample-card h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.sample-level {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #9a98ad;
+}
+
+.sample-preview {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: #6b6885;
+}
+
+.sample-detail {
+  background: #fff;
+  border: 1px solid #e5e4ef;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.sample-detail h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.sample-content {
+  background: #f9f8fd;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #3a4062;
+}
+
+.sample-content p {
+  margin: 0;
+}
+
+.translation-toggle,
+.copy-btn {
+  width: 100%;
+  border: 0;
+  background: #4352b8;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.translation-toggle:active,
+.copy-btn:active {
+  opacity: 0.8;
+}
+
+.sample-translation {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.sample-translation h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.sample-translation p {
+  margin: 0;
+  color: #3a4062;
+}
+
+.sample-vocabulary {
+  margin-bottom: 10px;
+}
+
+.sample-vocabulary h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.phrases-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.phrase-category {
+  background: #f3f1f8;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.phrase-category h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #4352b8;
+}
+
+.phrase-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phrase-item {
+  background: #fff;
+  border: 1px solid #d9d8e8;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 13px;
+}
+
+.phrase-item:active {
+  background: #f0ecff;
+  border-color: #4352b8;
+}
+
+.phrases-tips {
+  background: #eef0ff;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.phrases-tips h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #4352b8;
+}
+
+.phrases-tips ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.phrases-tips li {
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #3a4062;
+}
+
+/* Pronunciation Page Styles */
+.feature-intro {
+  margin: 8px 0 12px;
+  font-size: 13px;
+  color: #6b6885;
+}
+
+.pronunciation-section {
+  margin-bottom: 12px;
+}
+
+.pronunciation-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.pronunciation-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.pronunciation-tip {
+  background: #eef0ff;
+  border-left: 4px solid #4352b8;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.pronunciation-tip h3 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: #4352b8;
+}
+
+.pronunciation-tip p {
+  margin: 0;
+  font-size: 13px;
+  color: #3a4062;
+  line-height: 1.5;
+}
+
+.sample-box {
+  background: #f9f8fd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.sample-box h3 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.drills-section {
+  margin-top: 10px;
+}
+
+.drills-section h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.number-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.drill-card {
+  position: relative;
+  background: #f3f1f8;
+  border: 1px solid #d9d8e8;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.drill-number {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #4352b8;
+  background: rgba(67, 82, 184, 0.1);
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.drill-button {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 8px 6px 8px 30px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.drill-word {
+  font-weight: 600;
+  color: #2f3866;
+  font-size: 13px;
+}
+
+.drill-icon {
+  font-size: 10px;
+  color: #9a98ad;
+}
+
+.pronunciation-guide {
+  background: #f9f8fd;
+}
+
+.pronunciation-guide h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.guide-list {
+  display: grid;
+  gap: 10px;
+}
+
+.guide-list article {
+  background: #fff;
+  border: 1px solid #e5e4ef;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.guide-list h4 {
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: #4352b8;
+}
+
+.guide-list p {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: #6b6885;
+}
+
+.example-items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.example-items span {
+  font-size: 12px;
+  color: #3a4062;
+  padding: 4px 6px;
+  background: #eef0ff;
+  border-radius: 4px;
+}
+
+/* Voice To Voice Page Styles */
+.voice-scenario {
+  padding: 0;
+  overflow: hidden;
+}
+
+.voice-scenario > * {
+  padding: 0 14px;
+}
+
+.voice-scenario > *:first-child {
+  padding-top: 14px;
+}
+
+.voice-scenario > *:last-child {
+  padding-bottom: 14px;
+}
+
+.scenario-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.scenario-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.scenario-prompt-box {
+  background: #f9f8fd;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.scenario-prompt-box h3 {
+  margin: 0 0 6px;
+  font-size: 13px;
+}
+
+.phrases-practice {
+  margin: 12px 0;
+}
+
+.phrases-practice h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.phrase-practice-list {
+  display: grid;
+  gap: 8px;
+}
+
+.phrase-practice-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  background: #f3f1f8;
+  border: 1px solid #d9d8e8;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.2s;
+}
+
+.phrase-practice-item.practiced {
+  background: #e6f9ee;
+  border-color: #6ac598;
+}
+
+.phrase-number {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4352b8;
+  background: rgba(67, 82, 184, 0.1);
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.phrase-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.phrase-text {
+  margin: 0;
+  font-size: 13px;
+  color: #2f3866;
+  font-weight: 500;
+}
+
+.phrase-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.phrase-btn {
+  border: 1px solid #d9d8e8;
+  background: #fff;
+  color: #4352b8;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1;
+}
+
+.phrase-btn.speak {
+  background: #e0e4ff;
+  border-color: #4352b8;
+}
+
+.phrase-btn.practice {
+  background: #f0f2fb;
+  color: #6b6885;
+}
+
+.phrase-btn.practice.done {
+  background: #e6f9ee;
+  border-color: #6ac598;
+  color: #2e7d56;
+}
+
+.vocabulary-section {
+  margin: 12px 0;
+}
+
+.vocabulary-section h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.vocab-chip-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.vocab-chip-btn {
+  border: 1px solid #d9d8e8;
+  background: #f3f1f8;
+  color: #4352b8;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+
+.vocab-chip-btn:active {
+  background: #e0e4ff;
+  border-color: #4352b8;
+}
+
+.chip-number {
+  background: rgba(67, 82, 184, 0.15);
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.voice-tips {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.voice-tips h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #92400e;
+}
+
+.tips-list {
+  display: grid;
+  gap: 8px;
+}
+
+.tip-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+.tip-icon {
+  background: #fcd34d;
+  color: #92400e;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.tip-item p {
+  margin: 0;
+  font-size: 12px;
+  color: #78350f;
 }
 
 @media (max-width: 720px) {

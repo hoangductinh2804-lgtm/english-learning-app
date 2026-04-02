@@ -8,6 +8,7 @@ import PronunciationPage from "./pages/features/PronunciationPage";
 import ReadingPracticePage from "./pages/features/ReadingPracticePage";
 import ToolsPage from "./pages/features/ToolsPage";
 import VoiceToVoicePage from "./pages/features/VoiceToVoicePage";
+import WritingPage from "./pages/features/WritingPage";
 import HomePage from "./pages/HomePage";
 import StudyPage from "./pages/StudyPage";
 
@@ -21,6 +22,7 @@ function AppShell() {
           <Route path="/listening" element={<CategoryPage mode="listening" />} />
           <Route path="/listening/practice/:slug" element={<ListeningPracticePage />} />
           <Route path="/reading" element={<ReadingPracticePage />} />
+          <Route path="/writing" element={<WritingPage />} />
           <Route path="/grammar" element={<GrammarLabPage />} />
           <Route path="/matching" element={<MatchingGamePage />} />
           <Route path="/tools" element={<ToolsPage />} />

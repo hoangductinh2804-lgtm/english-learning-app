@@ -1,0 +1,11 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" fill="#e3f2fd"/>
+  <g>
+    <circle cx="35" cy="45" r="15" fill="#1976d2"/>
+    <path d="M35,32 L40,25 L35,30 Z" fill="#2196f3"/>
+    <path d="M48,45 L55,40 L50,45 Z" fill="#2196f3"/>
+  </g>
+  <path d="M60,35 L80,50 L60,65 Z" fill="#64b5f6"/>
+  <rect x="20" y="65" width="60" height="10" fill="#90caf9" rx="3"/>
+  <text x="50" y="72" text-anchor="middle" font-size="8" fill="#1976d2" font-weight="bold">Book</text>
+</svg>

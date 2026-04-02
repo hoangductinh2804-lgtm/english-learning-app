@@ -1,83 +1,26 @@
-import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import ProtectedRoute from "./components/ProtectedRoute";
+import BottomNav from "./components/BottomNav";
+import CategoryPage from "./pages/CategoryPage";
+import HomePage from "./pages/HomePage";
+import StudyPage from "./pages/StudyPage";
 
-const LoginPage = lazy(() => import("./pages/LoginPage"));
-const RegisterPage = lazy(() => import("./pages/RegisterPage"));
-const DashboardPage = lazy(() => import("./pages/DashboardPage"));
-const VocabularyPage = lazy(() => import("./pages/VocabularyPage"));
-const GrammarPage = lazy(() => import("./pages/GrammarPage"));
-const ExercisesPage = lazy(() => import("./pages/ExercisesPage"));
-const QuizResultPage = lazy(() => import("./pages/QuizResultPage"));
-const GamificationPage = lazy(() => import("./pages/GamificationPage"));
-const AdvancedFeaturesPage = lazy(() => import("./pages/AdvancedFeaturesPage"));
-
-function App() {
+function AppShell() {
   return (
-    <Suspense fallback={<p className="loading">Loading page...</p>}>
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <DashboardPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/vocabulary"
-          element={
-            <ProtectedRoute>
-              <VocabularyPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/grammar"
-          element={
-            <ProtectedRoute>
-              <GrammarPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/exercises"
-          element={
-            <ProtectedRoute>
-              <ExercisesPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/quiz-result"
-          element={
-            <ProtectedRoute>
-              <QuizResultPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/gamification"
-          element={
-            <ProtectedRoute>
-              <GamificationPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/advanced"
-          element={
-            <ProtectedRoute>
-              <AdvancedFeaturesPage />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
-    </Suspense>
+    <div className="mobile-shell">
+      <div className="mobile-screen">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/flashcards" element={<CategoryPage mode="flashcard" />} />
+          <Route path="/listening" element={<CategoryPage mode="listening" />} />
+          <Route path="/study/:slug" element={<StudyPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
+      <BottomNav />
+    </div>
   );
 }
 
-export default App;
+export default function App() {
+  return <AppShell />;
+}

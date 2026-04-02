@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
-import { listeningLessons } from "../../data/featureContent";
+import { buildCategories, buildListeningLessons } from "../../data/vocabularyBank";
+
+const listeningLessons = buildListeningLessons(buildCategories());
 
 function slugify(text) {
   return text
@@ -20,6 +22,12 @@ const topicImages = {
   Education: "/images/topics/jobs-occupations.svg",
   Health: "/images/topics/jobs-occupations.svg",
   Family: "/images/topics/daily-life.svg",
+  Technology: "/images/topics/jobs-occupations.svg",
+  Environment: "/images/topics/daily-life.svg",
+  Emotions: "/images/topics/daily-life.svg",
+  Business: "/images/topics/jobs-occupations.svg",
+  Science: "/images/topics/jobs-occupations.svg",
+  Nature: "/images/topics/daily-life.svg",
 };
 
 function getTopicImage(topic) {
@@ -33,16 +41,7 @@ export default function ListeningPracticePage() {
 
   const activeLessons = useMemo(() => {
     if (!slug) return listeningLessons;
-
-    if (slug === "daily-life") {
-      return listeningLessons.filter((item) => item.topic === "Daily Life");
-    }
-
-    if (slug === "food-drink") {
-      return listeningLessons.filter((item) => item.topic === "Food & Drink");
-    }
-
-    return listeningLessons;
+    return listeningLessons.filter((item) => item.id.startsWith(`${slug}-`));
   }, [slug]);
 
   const lesson = activeLessons[Math.min(lessonIndex, activeLessons.length - 1)] || listeningLessons[0];

@@ -1,5 +1,8 @@
 import { getVocabulary } from "../api/client";
-import { categories as fallbackCategories, studyDecks } from "../data/studyData";
+import { buildCategories, buildStudyDecks } from "../data/vocabularyBank";
+
+const fallbackCategories = buildCategories();
+const studyDecks = buildStudyDecks(fallbackCategories);
 
 const STORAGE_KEY = "ela_learning_progress_v1";
 

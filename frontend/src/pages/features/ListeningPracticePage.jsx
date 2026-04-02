@@ -2,20 +2,19 @@ import { useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { listeningLessons } from "../../data/featureContent";
 
-// Vocabulary images mapping
-const vocabularyImages = {
-  routine: "routine",
-  breakfast: "breakfast",
-  productive: "productive",
-  commute: "commute",
-  grilled: "grilled",
-  salad: "salad",
-  dessert: "dessert",
+const topicImages = {
+  "Daily Life": "/images/topics/daily-life.svg",
+  "Food & Drink": "/images/topics/food-drink.svg",
+  "Jobs & Occupations": "/images/topics/jobs-occupations.svg",
+  Travel: "/images/topics/daily-life.svg",
+  Shopping: "/images/topics/food-drink.svg",
+  Education: "/images/topics/jobs-occupations.svg",
+  Health: "/images/topics/jobs-occupations.svg",
+  Family: "/images/topics/daily-life.svg",
 };
 
-function getVocabImage(word) {
-  const key = word.toLowerCase().replace(/\s+/g, "-");
-  return vocabularyImages[key] || null;
+function getTopicImage(topic) {
+  return topicImages[topic] || "/images/topics/daily-life.svg";
 }
 
 export default function ListeningPracticePage() {
@@ -113,12 +112,12 @@ export default function ListeningPracticePage() {
         <h3>Tu vung theo bai nghe</h3>
         <div className="vocab-list">
           {lesson.vocabulary.map((item) => {
-            const imgFile = getVocabImage(item.word);
+            const imageSrc = item.image || getTopicImage(lesson.topic);
             return (
               <article className="vocab-item vocab-with-image" key={item.word}>
-                {imgFile && (
+                {imageSrc && (
                   <img
-                    src={`/images/vocabulary/${imgFile}.svg`}
+                    src={imageSrc}
                     alt={item.word}
                     className="vocab-image"
                   />

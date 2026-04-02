@@ -1,5 +1,5 @@
 import { getVocabulary } from "../api/client";
-import { categories as fallbackCategories } from "../data/studyData";
+import { categories as fallbackCategories, studyDecks } from "../data/studyData";
 
 const STORAGE_KEY = "ela_learning_progress_v1";
 
@@ -10,6 +10,32 @@ function slugify(text) {
     .replace(/[^a-z0-9\s-]/g, "")
     .replace(/\s+/g, "-")
     .replace(/-+/g, "-");
+}
+
+function createFallbackWord(topicSlug, word, index) {
+  return {
+    _id: `${topicSlug}-${index}-${slugify(word.word)}`,
+    topic: topicSlug,
+    word: word.word,
+    ipa: word.ipa || "",
+    meaning: word.meaning || "",
+    example: word.example || "",
+    image: word.image || "",
+  };
+}
+
+function mergeFallbackWords(categories) {
+  return categories.map((category) => {
+    if ((category.words || []).length > 0) {
+      return category;
+    }
+
+    const fallbackWords = studyDecks[category.slug] || [];
+    return {
+      ...category,
+      words: fallbackWords.map((word, index) => createFallbackWord(category.slug, word, index)),
+    };
+  });
 }
 
 function readStore() {
@@ -74,12 +100,10 @@ export async function loadCategoryCatalog() {
       grouped.get(slug).words.push(item);
     });
 
-    return Array.from(grouped.values()).sort((a, b) => a.title.localeCompare(b.title));
+    const fromApi = Array.from(grouped.values()).sort((a, b) => a.title.localeCompare(b.title));
+    return mergeFallbackWords(fromApi.length > 0 ? fromApi : fallbackCategories);
   } catch (_error) {
-    return fallbackCategories.map((item) => ({
-      ...item,
-      words: [],
-    }));
+    return mergeFallbackWords(fallbackCategories);
   }
 }
 

@@ -40,6 +40,7 @@ export default function StudyPage() {
   const currentId = currentWord?._id;
   const isRemembered = currentId ? !!store.remembered[currentId] : false;
   const isLiked = currentId ? !!store.liked[currentId] : false;
+  const imageSrc = currentWord?.image || category?.cover || "";
 
   useEffect(() => {
     setIndex(0);
@@ -104,9 +105,14 @@ export default function StudyPage() {
         <button className="like-btn" onClick={likeCurrent} type="button" aria-label="Like card">
           {isLiked ? "❤" : "♡"}
         </button>
+        {imageSrc ? <img alt={currentWord?.word || "flashcard"} className="flashcard-image" src={imageSrc} /> : null}
         <h2>{currentWord?.word || "No word"}</h2>
         {showMeaning && currentWord ? (
-          <p className="word-meaning">{currentWord.meaning}</p>
+          <div className="word-meaning-block">
+            <p className="word-ipa">{currentWord.ipa || ""}</p>
+            <p className="word-meaning">{currentWord.meaning}</p>
+            {currentWord.example ? <p className="word-example">{currentWord.example}</p> : null}
+          </div>
         ) : (
           <p className="word-meaning hint">Cham vao the de hien nghia</p>
         )}

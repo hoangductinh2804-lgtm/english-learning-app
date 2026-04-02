@@ -47,6 +47,8 @@ export const quickPractice = [
   { label: "Cong cu", icon: "🧰", path: "/tools" },
   { label: "Ngu am", icon: "📣", path: "/pronunciation" },
   { label: "Voice to Voice", icon: "🗣", path: "/voice" },
+  { label: "Cong Thuc", icon: "📐", path: "/formulas" },
+  { label: "Tai Lieu", icon: "📄", path: "/documentation" },
 ];
 
 export const studyDecks = {

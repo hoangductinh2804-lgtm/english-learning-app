@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import {
   getMyProgress,
   getVocabulary,
-  getVocabularyByLevel,
-  getVocabularyByTopic,
   reviewVocabulary,
 } from "../api/client";
 import Flashcard from "../components/Flashcard";
@@ -37,21 +35,19 @@ function VocabularyPage() {
     setError("");
 
     try {
-      let response;
-
-      if (selectedLevel !== "all" && selectedTopic !== "all") {
-        response = await getVocabulary({ level: selectedLevel, topic: selectedTopic });
-      } else if (selectedLevel !== "all") {
-        response = await getVocabularyByLevel(selectedLevel);
-      } else if (selectedTopic !== "all") {
-        response = await getVocabularyByTopic(selectedTopic);
-      } else {
-        response = await getVocabulary();
+      const params = {};
+      if (selectedLevel !== "all") {
+        params.level = selectedLevel;
       }
+      if (selectedTopic !== "all") {
+        params.topic = selectedTopic;
+      }
+
+      const response = await getVocabulary(params);
 
       setItems(response.vocabulary || []);
       if (response.topics) {
-        setTopics(response.topics);
+        setTopics(response.topics.slice().sort((a, b) => a.localeCompare(b)));
       }
     } catch (err) {
       setError(err.message);
@@ -104,7 +100,7 @@ function VocabularyPage() {
     <main className="vocabulary-page">
       <section className="vocabulary-header">
         <h1>Vocabulary Learning</h1>
-        <p>Filter words by level/topic, then review quickly with flashcards.</p>
+        <p>Lọc theo chủ đề và level để học nhanh hơn.</p>
         <Link to="/dashboard">Back to dashboard</Link>
       </section>
 
@@ -137,7 +133,22 @@ function VocabularyPage() {
             ))}
           </select>
         </label>
+
+        <button
+          type="button"
+          className="secondary-btn"
+          onClick={() => {
+            setSelectedLevel("all");
+            setSelectedTopic("all");
+          }}
+        >
+          Reset bộ lọc
+        </button>
       </section>
+
+      <p className="score-text">
+        Hiển thị {items.length} từ | Level: {selectedLevel} | Chủ đề: {selectedTopic}
+      </p>
 
       <Flashcard items={items} onReview={handleReview} />
 

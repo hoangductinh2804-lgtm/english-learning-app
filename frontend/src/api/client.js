@@ -1,6 +1,7 @@
 const DEFAULT_PROD_API_URL = "https://english-learning-backend-80vz.onrender.com/api";
+const LOCAL_HOSTNAMES = new Set(["localhost", "127.0.0.1", "::1"]);
 const API_URL = import.meta.env.VITE_API_URL ||
-  (window.location.hostname === "localhost"
+  (LOCAL_HOSTNAMES.has(window.location.hostname)
     ? "http://localhost:5000/api"
     : DEFAULT_PROD_API_URL);
 

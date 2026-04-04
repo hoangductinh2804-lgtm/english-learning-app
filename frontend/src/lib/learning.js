@@ -3,6 +3,13 @@ import { buildCategories, buildStudyDecks } from "../data/vocabularyBank";
 
 const fallbackCategories = buildCategories();
 const studyDecks = buildStudyDecks(fallbackCategories);
+const fallbackCategoryMeta = new Map(
+  fallbackCategories.map((category) => [category.slug, {
+    icon: category.icon,
+    cover: category.cover,
+    description: category.description,
+  }])
+);
 
 const STORAGE_KEY = "ela_learning_progress_v1";
 
@@ -44,6 +51,7 @@ function mergeFallbackWords(categories) {
     if ((category.words || []).length > 0) {
       return {
         ...category,
+        source: category.source || "api",
         words: category.words.map((word, index) => normalizeApiWord(category.slug, word, index)),
       };
     }
@@ -51,6 +59,7 @@ function mergeFallbackWords(categories) {
     const fallbackWords = studyDecks[category.slug] || [];
     return {
       ...category,
+      source: "fallback",
       words: fallbackWords.map((word, index) => createFallbackWord(category.slug, word, index)),
     };
   });
@@ -106,11 +115,14 @@ export async function loadCategoryCatalog() {
       const slug = slugify(topic);
 
       if (!grouped.has(slug)) {
+        const meta = fallbackCategoryMeta.get(slug);
         grouped.set(slug, {
           slug,
           title: topic,
-          icon: "📘",
-          description: `Tu vung theo chu de ${topic}`,
+          icon: meta?.icon || "📘",
+          cover: meta?.cover || "/images/topics/daily-life.svg",
+          description: meta?.description || `Tu vung theo chu de ${topic}`,
+          source: "api",
           words: [],
         });
       }
@@ -121,7 +133,12 @@ export async function loadCategoryCatalog() {
     const fromApi = Array.from(grouped.values()).sort((a, b) => a.title.localeCompare(b.title));
     return mergeFallbackWords(fromApi.length > 0 ? fromApi : fallbackCategories);
   } catch (_error) {
-    return mergeFallbackWords(fallbackCategories);
+    return mergeFallbackWords(
+      fallbackCategories.map((category) => ({
+        ...category,
+        source: "fallback",
+      }))
+    );
   }
 }
 

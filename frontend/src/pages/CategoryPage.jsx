@@ -59,6 +59,16 @@ export default function CategoryPage({ mode }) {
     return next;
   }, [categories, filter, progressMap, query, sortBy]);
 
+  const totalWords = useMemo(
+    () => categories.reduce((sum, category) => sum + (category.words?.length || 0), 0),
+    [categories]
+  );
+
+  const usingFallback = useMemo(
+    () => categories.length > 0 && categories.every((category) => category.source === "fallback"),
+    [categories]
+  );
+
   function openRandomCategory() {
     if (visible.length === 0) return;
     const randomIndex = Math.floor(Math.random() * visible.length);
@@ -118,6 +128,11 @@ export default function CategoryPage({ mode }) {
       </section>
 
       {isLoading ? <p className="status-text">Dang tai du lieu...</p> : null}
+      {!isLoading ? (
+        <p className="status-text">
+          Nguon du lieu: {usingFallback ? "fallback" : "api"} | Chu de: {categories.length} | Tu vung: {totalWords}
+        </p>
+      ) : null}
 
       <section className="category-grid">
         {visible.map((item) => {

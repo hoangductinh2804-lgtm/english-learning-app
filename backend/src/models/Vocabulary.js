@@ -20,6 +20,10 @@ const vocabularySchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    image: {
+      type: String,
+      trim: true,
+    },
     topic: {
       type: String,
       required: true,

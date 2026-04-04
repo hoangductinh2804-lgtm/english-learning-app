@@ -630,23 +630,49 @@ export function buildStudyDecks(categories) {
 }
 
 export function buildListeningLessons(categories) {
-  return categories.map((category) => ({
-    id: `${category.slug}-listening`,
-    title: category.listeningTitle,
-    topic: category.topic,
-    level: category.listeningLevel,
-    duration: category.listeningDuration,
-    highlight: category.listeningHighlight,
-    script: category.listeningScript,
-    questions: category.listeningQuestions,
-    vocabulary: category.words.slice(0, 6).map((word) => ({
-      word: word.word,
-      ipa: word.ipa,
-      meaning: word.meaning,
-      example: word.example,
-      image: word.image,
-    })),
-  }));
+  return categories.map((category) => {
+    const sampleWords = (category.words || []).slice(0, 6);
+    const focusWords = sampleWords.slice(0, 3).map((word) => word.word).join(", ");
+
+    return {
+      id: `${category.slug}-listening`,
+      title: `${category.title} Listening`,
+      topic: category.title,
+      level: category.level || "Beginner",
+      duration: "3m 00s",
+      highlight: `Luyện nghe từ vựng chủ đề ${category.title}.`,
+      script: [
+        `Today we practice ${category.title}.`,
+        focusWords ? `Useful words include ${focusWords}.` : `Useful words appear in this topic.`,
+        "Listen carefully and repeat the words aloud.",
+        "Try to remember the meaning and use each word in a sentence.",
+      ],
+      questions: [
+        {
+          prompt: `Which topic is this lesson about?`,
+          options: [category.title, "Daily Life", "Technology"],
+          answer: 0,
+        },
+        {
+          prompt: `What should you do while listening?`,
+          options: ["Repeat aloud", "Sleep", "Ignore the words"],
+          answer: 0,
+        },
+        {
+          prompt: `How many sample words are shown?`,
+          options: ["One", "Two", "Three or more"],
+          answer: 2,
+        },
+      ],
+      vocabulary: sampleWords.map((word) => ({
+        word: word.word,
+        ipa: word.ipa,
+        meaning: word.meaning,
+        example: word.example,
+        image: word.image,
+      })),
+    };
+  });
 }
 
 export function getVocabularyTopicBank() {

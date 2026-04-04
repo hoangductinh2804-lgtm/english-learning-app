@@ -20,7 +20,19 @@ function createFallbackWord(topicSlug, word, index) {
     _id: `${topicSlug}-${index}-${slugify(word.word)}`,
     topic: topicSlug,
     word: word.word,
-    ipa: word.ipa || "",
+    ipa: word.ipa || word.pronunciation || "",
+    meaning: word.meaning || "",
+    example: word.example || "",
+    image: word.image || `/images/vocabulary-cards/${slugify(word.word)}.svg`,
+  };
+}
+
+function normalizeApiWord(topicSlug, word, index) {
+  return {
+    _id: word._id || `${topicSlug}-${index}-${slugify(word.word)}`,
+    topic: word.topic || topicSlug,
+    word: word.word,
+    ipa: word.ipa || word.pronunciation || "",
     meaning: word.meaning || "",
     example: word.example || "",
     image: word.image || `/images/vocabulary-cards/${slugify(word.word)}.svg`,
@@ -30,7 +42,10 @@ function createFallbackWord(topicSlug, word, index) {
 function mergeFallbackWords(categories) {
   return categories.map((category) => {
     if ((category.words || []).length > 0) {
-      return category;
+      return {
+        ...category,
+        words: category.words.map((word, index) => normalizeApiWord(category.slug, word, index)),
+      };
     }
 
     const fallbackWords = studyDecks[category.slug] || [];

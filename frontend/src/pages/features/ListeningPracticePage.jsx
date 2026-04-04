@@ -1,8 +1,7 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
-import { buildCategories, buildListeningLessons } from "../../data/vocabularyBank";
-
-const listeningLessons = buildListeningLessons(buildCategories());
+import { buildListeningLessons } from "../../data/vocabularyBank";
+import { loadCategoryCatalog } from "../../lib/learning";
 
 function slugify(text) {
   return text
@@ -38,16 +37,48 @@ export default function ListeningPracticePage() {
   const { slug } = useParams();
   const [lessonIndex, setLessonIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    loadCategoryCatalog()
+      .then((result) => {
+        if (!cancelled) {
+          setCategories(result);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setCategories([]);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const listeningLessons = useMemo(() => buildListeningLessons(categories), [categories]);
 
   const activeLessons = useMemo(() => {
     if (!slug) return listeningLessons;
     return listeningLessons.filter((item) => item.id.startsWith(`${slug}-`));
   }, [slug]);
 
-  const lesson = activeLessons[Math.min(lessonIndex, activeLessons.length - 1)] || listeningLessons[0];
+  const lesson =
+    activeLessons[Math.min(lessonIndex, activeLessons.length - 1)] ||
+    listeningLessons[0] || {
+      title: "Luyện nghe",
+      script: [],
+      questions: [],
+      vocabulary: [],
+      topic: "",
+    };
 
   function speakLesson() {
     if (typeof window === "undefined" || !window.speechSynthesis) return;
+    if (!lesson.script.length) return;
     const script = lesson.script.join(" ");
     const utterance = new SpeechSynthesisUtterance(script);
     utterance.lang = "en-US";

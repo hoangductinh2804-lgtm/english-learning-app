@@ -20,7 +20,9 @@
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
-    "mongoose": "^8.5.1"
+    "mongoose": "^8.5.1",
+    "cmu-pronouncing-dictionary": "^3.0.0",
+    "tratu": "^2.2.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"

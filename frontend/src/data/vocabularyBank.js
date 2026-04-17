@@ -1,3 +1,5 @@
+import { b2VocabularyExtras } from "./vocabularyBankB2Extras.js";
+
 const topicVocabularyBank = [
   {
     slug: "daily-life",
@@ -7,7 +9,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/daily-life.svg",
     description: "Từ vựng về sinh hoạt hằng ngày, thói quen và hành động cơ bản",
     listeningTitle: "Morning Routine Conversation",
-    listeningLevel: "Beginner",
+    listeningLevel: "B2",
     listeningDuration: "3m 05s",
     listeningHighlight: "Talking about routines and daily habits.",
     listeningScript: [
@@ -46,7 +48,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/food-drink.svg",
     description: "Tên món ăn, đồ uống và hoạt động trong quán ăn",
     listeningTitle: "At The Cafe",
-    listeningLevel: "Elementary",
+    listeningLevel: "B2",
     listeningDuration: "2m 55s",
     listeningHighlight: "Ordering food and drinks politely.",
     listeningScript: [
@@ -85,7 +87,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/jobs-occupations.svg",
     description: "Từ vựng về quần áo, phụ kiện và mua sắm thời trang",
     listeningTitle: "Shopping For Clothes",
-    listeningLevel: "Elementary",
+    listeningLevel: "B2",
     listeningDuration: "2m 48s",
     listeningHighlight: "Buying clothes and asking about sizes.",
     listeningScript: [
@@ -124,7 +126,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/jobs-occupations.svg",
     description: "Nghề nghiệp, công việc, văn phòng và môi trường làm việc",
     listeningTitle: "Team Meeting Update",
-    listeningLevel: "Intermediate",
+    listeningLevel: "B2",
     listeningDuration: "3m 15s",
     listeningHighlight: "Talking about work tasks and deadlines.",
     listeningScript: [
@@ -163,7 +165,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/daily-life.svg",
     description: "Từ vựng về đi lại, sân bay, khách sạn và du lịch",
     listeningTitle: "At The Airport",
-    listeningLevel: "Elementary",
+    listeningLevel: "B2",
     listeningDuration: "3m 00s",
     listeningHighlight: "Checking in and boarding a flight.",
     listeningScript: [
@@ -202,7 +204,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/food-drink.svg",
     description: "Từ vựng về mua sắm, giá cả, cửa hàng và chợ",
     listeningTitle: "Shopping At The Market",
-    listeningLevel: "Elementary",
+    listeningLevel: "B2",
     listeningDuration: "3m 10s",
     listeningHighlight: "Buying fresh food at the market.",
     listeningScript: [
@@ -241,7 +243,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/jobs-occupations.svg",
     description: "Từ vựng về sức khỏe, triệu chứng, bệnh viện và thói quen tốt",
     listeningTitle: "At The Clinic",
-    listeningLevel: "Elementary",
+    listeningLevel: "B2",
     listeningDuration: "2m 50s",
     listeningHighlight: "Talking about symptoms and advice at a clinic.",
     listeningScript: [
@@ -280,7 +282,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/jobs-occupations.svg",
     description: "Từ vựng về lớp học, trường học, bài tập và học tập",
     listeningTitle: "Classroom Instructions",
-    listeningLevel: "Elementary",
+    listeningLevel: "B2",
     listeningDuration: "3m 05s",
     listeningHighlight: "Following teacher instructions in class.",
     listeningScript: [
@@ -319,7 +321,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/daily-life.svg",
     description: "Từ vựng về gia đình, người thân và sinh hoạt cùng nhau",
     listeningTitle: "Weekend Family Plans",
-    listeningLevel: "Elementary",
+    listeningLevel: "B2",
     listeningDuration: "2m 58s",
     listeningHighlight: "Planning a weekend with family.",
     listeningScript: [
@@ -358,7 +360,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/jobs-occupations.svg",
     description: "Từ vựng về thiết bị số, internet và phần mềm",
     listeningTitle: "Technology At Work",
-    listeningLevel: "Intermediate",
+    listeningLevel: "B2",
     listeningDuration: "3m 08s",
     listeningHighlight: "Using devices and working online safely.",
     listeningScript: [
@@ -397,7 +399,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/daily-life.svg",
     description: "Từ vựng về môi trường, ô nhiễm và bảo vệ thiên nhiên",
     listeningTitle: "Protecting The Environment",
-    listeningLevel: "Elementary",
+    listeningLevel: "B2",
     listeningDuration: "2m 52s",
     listeningHighlight: "Talking about recycling and clean air.",
     listeningScript: [
@@ -436,7 +438,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/jobs-occupations.svg",
     description: "Từ vựng về công ty, khách hàng, hợp đồng và doanh số",
     listeningTitle: "Business Meeting",
-    listeningLevel: "Upper-Intermediate",
+    listeningLevel: "B2",
     listeningDuration: "3m 20s",
     listeningHighlight: "Talking about sales, contracts and plans.",
     listeningScript: [
@@ -475,7 +477,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/jobs-occupations.svg",
     description: "Từ vựng về khoa học, phòng thí nghiệm và khám phá",
     listeningTitle: "Science In The Lab",
-    listeningLevel: "Intermediate",
+    listeningLevel: "B2",
     listeningDuration: "3m 06s",
     listeningHighlight: "Discussing experiments and discovery.",
     listeningScript: [
@@ -514,7 +516,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/daily-life.svg",
     description: "Từ vựng về cảm xúc và trạng thái tinh thần",
     listeningTitle: "How Are You Feeling?",
-    listeningLevel: "Elementary",
+    listeningLevel: "B2",
     listeningDuration: "2m 35s",
     listeningHighlight: "Talking about feelings in daily life.",
     listeningScript: [
@@ -553,7 +555,7 @@ const topicVocabularyBank = [
     cover: "/images/topics/daily-life.svg",
     description: "Từ vựng về thiên nhiên, động vật và cảnh quan",
     listeningTitle: "A Walk In Nature",
-    listeningLevel: "Beginner",
+    listeningLevel: "B2",
     listeningDuration: "2m 40s",
     listeningHighlight: "Describing trees, animals, and landscapes.",
     listeningScript: [
@@ -612,17 +614,38 @@ function normalizeWord(topicSlug, wordRecord, index, topicCover) {
   };
 }
 
+function mergeTopicWords(topicSlug, topicWords) {
+  const extras = b2VocabularyExtras[topicSlug] || [];
+  const mergedWords = [...topicWords, ...extras];
+  const seen = new Set();
+
+  return mergedWords.filter((wordRecord) => {
+    const normalizedKey = slugify(wordRecord[0]);
+    if (seen.has(normalizedKey)) {
+      return false;
+    }
+
+    seen.add(normalizedKey);
+    return true;
+  });
+}
+
 export function buildCategories() {
-  return topicVocabularyBank.map((topic) => ({
-    slug: topic.slug,
-    icon: topic.icon,
-    cover: topic.cover,
-    title: topic.title,
-    description: topic.description,
-    flashcardsTotal: topic.words.length,
-    listeningTotal: 1,
-    words: topic.words.map((wordRecord, index) => normalizeWord(topic.slug, wordRecord, index, topic.cover)),
-  }));
+  return topicVocabularyBank.map((topic) => {
+    const mergedWords = mergeTopicWords(topic.slug, topic.words);
+
+    return {
+      slug: topic.slug,
+      icon: topic.icon,
+      cover: topic.cover,
+      title: topic.title,
+      description: topic.description,
+      level: topic.level || "B2",
+      flashcardsTotal: mergedWords.length,
+      listeningTotal: 1,
+      words: mergedWords.map((wordRecord, index) => normalizeWord(topic.slug, wordRecord, index, topic.cover)),
+    };
+  });
 }
 
 export function buildStudyDecks(categories) {
@@ -638,7 +661,7 @@ export function buildListeningLessons(categories) {
       id: `${category.slug}-listening`,
       title: `${category.title} Listening`,
       topic: category.title,
-      level: category.level || "Beginner",
+      level: category.level || "B2",
       duration: "3m 00s",
       highlight: `Luyện nghe từ vựng chủ đề ${category.title}.`,
       script: [

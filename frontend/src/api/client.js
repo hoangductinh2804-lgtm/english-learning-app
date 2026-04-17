@@ -80,27 +80,6 @@ export function getVocabularyByTopic(topic) {
   return request(`/vocabulary/topic/${encodeURIComponent(topic)}`, { method: "GET" });
 }
 
-export function getGrammarLessons(params = {}) {
-  const searchParams = new URLSearchParams();
-
-  if (params.level) {
-    searchParams.set("level", params.level);
-  }
-
-  const query = searchParams.toString();
-  const path = query ? `/grammar?${query}` : "/grammar";
-
-  return request(path, { method: "GET" });
-}
-
-export function getGrammarLessonByTense(tense) {
-  return request(`/grammar/tense/${encodeURIComponent(tense)}`, { method: "GET" });
-}
-
-export function getGrammarQuizByTense(tense) {
-  return request(`/grammar/tense/${encodeURIComponent(tense)}/quiz`, { method: "GET" });
-}
-
 export function getQuestions(params = {}) {
   const searchParams = new URLSearchParams();
 
@@ -155,10 +134,6 @@ export function getListeningTracks() {
 
 export function getSpeakingPrompts() {
   return request("/advanced/speaking-prompts", { method: "GET" });
-}
-
-export function getReadingArticles() {
-  return request("/advanced/reading", { method: "GET" });
 }
 
 export function getConversations() {

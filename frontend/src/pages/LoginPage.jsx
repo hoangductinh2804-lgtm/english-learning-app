@@ -30,40 +30,46 @@ function LoginPage() {
   return (
     <main className="auth-page">
       <section className="auth-card">
-        <h1>Login</h1>
-        <p>Welcome back. Continue your English learning journey.</p>
+        <div className="auth-card-header">
+          <h1>👋 Welcome Back</h1>
+          <p>Continue your English learning journey.</p>
+        </div>
 
-        <form onSubmit={handleSubmit}>
-          <label>
-            Email
-            <input
-              type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              required
-            />
-          </label>
+        <div className="auth-card-body">
+          <form onSubmit={handleSubmit}>
+            <label>
+              Email
+              <input
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="your@email.com"
+                required
+              />
+            </label>
 
-          <label>
-            Password
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              required
-            />
-          </label>
+            <label>
+              Password
+              <input
+                type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                placeholder="••••••••"
+                required
+              />
+            </label>
 
-          {error ? <p className="error-text">{error}</p> : null}
+            {error ? <p className="error-text">{error}</p> : null}
 
-          <button type="submit" disabled={submitting}>
-            {submitting ? "Logging in..." : "Login"}
-          </button>
-        </form>
+            <button type="submit" disabled={submitting}>
+              {submitting ? "Logging in..." : "Login →"}
+            </button>
+          </form>
 
-        <p className="auth-footnote">
-          No account yet? <Link to="/register">Create one</Link>
-        </p>
+          <p className="auth-footnote">
+            No account yet? <Link to="/register">Create one free</Link>
+          </p>
+        </div>
       </section>
     </main>
   );

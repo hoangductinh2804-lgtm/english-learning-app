@@ -5,6 +5,11 @@ import { useAuth } from "../context/AuthContext";
 
 const LEVELS = ["beginner", "intermediate", "advanced"];
 const GOAL_OPTIONS = [5, 10, 15, 20, 30, 45, 60, 90, 120];
+const LEVEL_LABELS = {
+  beginner: "🌱 Beginner",
+  intermediate: "⚡ Intermediate",
+  advanced: "🏆 Advanced",
+};
 
 function ProfilePage() {
   const navigate = useNavigate();
@@ -57,93 +62,95 @@ function ProfilePage() {
 
   return (
     <main className="auth-page profile-page">
-      <section className="auth-card profile-card">
-        <h1>Profile Settings</h1>
-        <p>Manage your account and learning preferences.</p>
-
-        <div className="profile-info">
-          <p>
-            <strong>Email:</strong> {user?.email}
-          </p>
-          <p>
-            <strong>Points:</strong> {user?.points ?? 0} | <strong>Streak:</strong>{" "}
-            {user?.streak ?? 0} days 🔥
-          </p>
+      <section className="profile-card">
+        <div className="profile-card-header">
+          <h1>⚙️ Profile Settings</h1>
+          <p>Manage your account and learning preferences.</p>
         </div>
 
-        <form onSubmit={handleSubmit}>
-          <label>
-            Full Name
-            <input
-              type="text"
-              value={fullName}
-              onChange={(event) => setFullName(event.target.value)}
-              required
-              minLength={2}
-              maxLength={100}
-            />
-          </label>
+        <div className="profile-card-body">
+          <div className="profile-info">
+            <p>📧 <strong>Email:</strong> {user?.email}</p>
+            <p>⭐ <strong>Points:</strong> {user?.points ?? 0} &nbsp;|&nbsp; 🔥 <strong>Streak:</strong> {user?.streak ?? 0} days</p>
+          </div>
 
-          <label>
-            Level
-            <select value={level} onChange={(event) => setLevel(event.target.value)}>
-              {LEVELS.map((l) => (
-                <option key={l} value={l}>
-                  {l.charAt(0).toUpperCase() + l.slice(1)}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label>
-            Daily Goal (minutes)
-            <select
-              value={dailyGoal}
-              onChange={(event) => setDailyGoal(Number(event.target.value))}
-            >
-              {GOAL_OPTIONS.map((mins) => (
-                <option key={mins} value={mins}>
-                  {mins} minutes
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <fieldset className="password-fieldset">
-            <legend>Change Password (optional)</legend>
+          <form onSubmit={handleSubmit}>
             <label>
-              Current Password
+              Full Name
               <input
-                type="password"
-                value={currentPassword}
-                onChange={(event) => setCurrentPassword(event.target.value)}
-                autoComplete="current-password"
+                type="text"
+                value={fullName}
+                onChange={(event) => setFullName(event.target.value)}
+                placeholder="Your full name"
+                required
+                minLength={2}
+                maxLength={100}
               />
             </label>
+
             <label>
-              New Password
-              <input
-                type="password"
-                value={newPassword}
-                onChange={(event) => setNewPassword(event.target.value)}
-                autoComplete="new-password"
-              />
+              Level
+              <select value={level} onChange={(event) => setLevel(event.target.value)}>
+                {LEVELS.map((l) => (
+                  <option key={l} value={l}>
+                    {LEVEL_LABELS[l]}
+                  </option>
+                ))}
+              </select>
             </label>
-          </fieldset>
 
-          {error ? <p className="error-text">{error}</p> : null}
-          {success ? <p className="success-text">{success}</p> : null}
+            <label>
+              Daily Goal (minutes)
+              <select
+                value={dailyGoal}
+                onChange={(event) => setDailyGoal(Number(event.target.value))}
+              >
+                {GOAL_OPTIONS.map((mins) => (
+                  <option key={mins} value={mins}>
+                    {mins} minutes
+                  </option>
+                ))}
+              </select>
+            </label>
 
-          <button type="submit" disabled={submitting}>
-            {submitting ? "Saving..." : "Save Changes"}
-          </button>
-        </form>
+            <fieldset className="password-fieldset">
+              <legend>Change Password (optional)</legend>
+              <label>
+                Current Password
+                <input
+                  type="password"
+                  value={currentPassword}
+                  onChange={(event) => setCurrentPassword(event.target.value)}
+                  placeholder="Current password"
+                  autoComplete="current-password"
+                />
+              </label>
+              <label>
+                New Password
+                <input
+                  type="password"
+                  value={newPassword}
+                  onChange={(event) => setNewPassword(event.target.value)}
+                  placeholder="Min. 6 characters"
+                  autoComplete="new-password"
+                />
+              </label>
+            </fieldset>
 
-        <div className="profile-footer">
-          <Link to="/dashboard">Back to Dashboard</Link>
-          <button type="button" className="logout-btn" onClick={handleLogout}>
-            Logout
-          </button>
+            {error ? <p className="error-text">{error}</p> : null}
+            {success ? <p className="success-text">{success}</p> : null}
+
+            <button type="submit" disabled={submitting}>
+              {submitting ? "Saving..." : "Save Changes →"}
+            </button>
+          </form>
+
+          <div className="profile-footer">
+            <Link to="/dashboard">← Dashboard</Link>
+            <button type="button" className="logout-btn" onClick={handleLogout}>
+              Logout
+            </button>
+          </div>
         </div>
       </section>
     </main>

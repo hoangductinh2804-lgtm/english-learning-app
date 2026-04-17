@@ -81,12 +81,11 @@ function ExercisesPage() {
 
   return (
     <main className="exercise-page">
-      <section className="vocabulary-header">
-        <h1>Exercises and Tests</h1>
-        <p>Luyen tap tong hop voi 3 dang bai tap va cham diem tu dong.</p>
-        <div className="header-links">
-          <Link to="/dashboard">Back to dashboard</Link>
-          <Link to="/grammar">Go to grammar</Link>
+      <section className="page-header">
+        <h1>🎯 Exercises &amp; Tests</h1>
+        <p>Practice with multiple choice, fill-in-the-blank and drag-drop questions.</p>
+        <div className="page-header-links">
+          <Link to="/dashboard">← Dashboard</Link>
         </div>
       </section>
 

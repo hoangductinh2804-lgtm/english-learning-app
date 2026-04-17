@@ -4,18 +4,16 @@ import {
   correctWriting,
   getConversations,
   getListeningTracks,
-  getReadingArticles,
   getSpeakingPrompts,
 } from "../api/client";
 
-const FEATURE_TABS = ["listening", "speaking", "reading", "writing", "conversation"];
+const FEATURE_TABS = ["listening", "speaking", "writing", "conversation"];
 const DIFFICULTY_TABS = ["easy", "medium", "hard"];
 
 function AdvancedFeaturesPage() {
   const [activeTab, setActiveTab] = useState("listening");
   const [tracks, setTracks] = useState([]);
   const [prompts, setPrompts] = useState([]);
-  const [articles, setArticles] = useState([]);
   const [conversations, setConversations] = useState([]);
   const [activeDifficulty, setActiveDifficulty] = useState("easy");
   const [selectedPrompt, setSelectedPrompt] = useState("");
@@ -43,10 +41,9 @@ function AdvancedFeaturesPage() {
       setError("");
 
       try {
-        const [listeningData, promptData, readingData, conversationData] = await Promise.all([
+        const [listeningData, promptData, conversationData] = await Promise.all([
           getListeningTracks(),
           getSpeakingPrompts(),
-          getReadingArticles(),
           getConversations(),
         ]);
 
@@ -54,7 +51,6 @@ function AdvancedFeaturesPage() {
         const nextPrompts = promptData.prompts || [];
         setPrompts(nextPrompts);
         setSelectedPrompt(nextPrompts[0] || "");
-        setArticles(readingData.articles || []);
         setConversations(conversationData.conversations || []);
       } catch (err) {
         setError(err.message);
@@ -132,26 +128,30 @@ function AdvancedFeaturesPage() {
 
   return (
     <main className="advanced-page">
-      <section className="vocabulary-header">
-        <h1>Advanced Features</h1>
-        <p>Listening, Speaking, Reading va Writing trong mot khu hoc tong hop.</p>
-        <div className="header-links">
-          <Link to="/dashboard">Back to dashboard</Link>
-          <Link to="/gamification">Go to gamification</Link>
+      <section className="page-header">
+        <h1>🎙️ Advanced Skills</h1>
+        <p>Practice Listening, Speaking, Writing and Conversation in one place.</p>
+        <div className="page-header-links">
+          <Link to="/dashboard">← Dashboard</Link>
+          <Link to="/gamification">🏆 Leaderboard</Link>
         </div>
       </section>
 
-      <section className="advanced-tab-row">
+      <div className="tab-row">
         {FEATURE_TABS.map((tab) => (
           <button
             key={tab}
             className={activeTab === tab ? "active" : ""}
             onClick={() => setActiveTab(tab)}
           >
-            {tab}
+            {tab === "listening" && "🎧 "}
+            {tab === "speaking"  && "🎤 "}
+            {tab === "writing"   && "✍️ "}
+            {tab === "conversation" && "💬 "}
+            {tab.charAt(0).toUpperCase() + tab.slice(1)}
           </button>
         ))}
-      </section>
+      </div>
 
       {error ? <p className="error-text">{error}</p> : null}
       {loading ? <p className="loading">Loading advanced features...</p> : null}
@@ -223,29 +223,6 @@ function AdvancedFeaturesPage() {
         </section>
       ) : null}
 
-      {!loading && activeTab === "reading" ? (
-        <section className="exercise-block">
-          <h2>Reading</h2>
-          <div className="advanced-card-grid">
-            {articles.map((article) => (
-              <article key={article.id} className="advanced-card">
-                <h3>{article.title}</h3>
-                <p>
-                  <strong>Level:</strong> {article.level}
-                </p>
-                <p>{article.content}</p>
-                <h4>Comprehension Questions</h4>
-                <ul className="rule-list">
-                  {article.questions.map((question) => (
-                    <li key={question}>{question}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
-      ) : null}
-
       {!loading && activeTab === "writing" ? (
         <section className="exercise-block">
           <h2>Writing (Essay Correction)</h2>
@@ -299,7 +276,7 @@ function AdvancedFeaturesPage() {
           <h2>Conversation Practice</h2>
           <p>Read dialogues, study translations, and practice speaking lines aloud.</p>
 
-          <div className="advanced-tab-row">
+          <div className="tab-row">
             {DIFFICULTY_TABS.map((diff) => (
               <button
                 key={diff}

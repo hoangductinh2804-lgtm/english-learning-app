@@ -32,60 +32,67 @@ function RegisterPage() {
   return (
     <main className="auth-page">
       <section className="auth-card">
-        <h1>Register</h1>
-        <p>Create your account and start learning English today.</p>
+        <div className="auth-card-header">
+          <h1>🚀 Get Started</h1>
+          <p>Create your account and start learning English today.</p>
+        </div>
 
-        <form onSubmit={handleSubmit}>
-          <label>
-            Full name
-            <input
-              type="text"
-              value={fullName}
-              onChange={(event) => setFullName(event.target.value)}
-              required
-            />
-          </label>
+        <div className="auth-card-body">
+          <form onSubmit={handleSubmit}>
+            <label>
+              Full Name
+              <input
+                type="text"
+                value={fullName}
+                onChange={(event) => setFullName(event.target.value)}
+                placeholder="Your full name"
+                required
+              />
+            </label>
 
-          <label>
-            Email
-            <input
-              type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              required
-            />
-          </label>
+            <label>
+              Email
+              <input
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="your@email.com"
+                required
+              />
+            </label>
 
-          <label>
-            Password
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              required
-              minLength={6}
-            />
-          </label>
+            <label>
+              Password
+              <input
+                type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                placeholder="Min. 6 characters"
+                required
+                minLength={6}
+              />
+            </label>
 
-          <label>
-            Level
-            <select value={level} onChange={(event) => setLevel(event.target.value)}>
-              <option value="beginner">Beginner</option>
-              <option value="intermediate">Intermediate</option>
-              <option value="advanced">Advanced</option>
-            </select>
-          </label>
+            <label>
+              Your Level
+              <select value={level} onChange={(event) => setLevel(event.target.value)}>
+                <option value="beginner">🌱 Beginner</option>
+                <option value="intermediate">⚡ Intermediate</option>
+                <option value="advanced">🏆 Advanced</option>
+              </select>
+            </label>
 
-          {error ? <p className="error-text">{error}</p> : null}
+            {error ? <p className="error-text">{error}</p> : null}
 
-          <button type="submit" disabled={submitting}>
-            {submitting ? "Creating account..." : "Register"}
-          </button>
-        </form>
+            <button type="submit" disabled={submitting}>
+              {submitting ? "Creating account..." : "Create Account →"}
+            </button>
+          </form>
 
-        <p className="auth-footnote">
-          Already have an account? <Link to="/login">Login</Link>
-        </p>
+          <p className="auth-footnote">
+            Already have an account? <Link to="/login">Login here</Link>
+          </p>
+        </div>
       </section>
     </main>
   );

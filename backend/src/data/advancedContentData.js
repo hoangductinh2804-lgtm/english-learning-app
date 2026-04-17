@@ -47,42 +47,6 @@ export const speakingPrompts = [
   "Explain one habit that helps you learn English better.",
 ];
 
-export const readingArticles = [
-  {
-    id: "reading-1",
-    title: "Why Reading Aloud Helps Language Learning",
-    level: "beginner",
-    content:
-      "Reading aloud helps learners improve pronunciation, rhythm, and confidence. It also helps your brain connect spelling with sound. If you read aloud for ten minutes every day, your speaking fluency can improve over time.",
-    questions: [
-      "What does reading aloud improve?",
-      "How much daily practice is suggested?",
-    ],
-  },
-  {
-    id: "reading-2",
-    title: "Small Habits for Better English",
-    level: "intermediate",
-    content:
-      "Many learners fail because they focus only on long study sessions. Small habits are often more effective. For example, learning five words a day and writing one short paragraph can build strong progress after a few months.",
-    questions: [
-      "Why do many learners fail?",
-      "Give two examples of small habits from the article.",
-    ],
-  },
-  {
-    id: "reading-3",
-    title: "Thinking in English",
-    level: "intermediate",
-    content:
-      "Thinking in English is a practical way to become more fluent. Start with simple thoughts like your daily schedule. Then move to describing what you see around you. This reduces translation time and makes conversation smoother.",
-    questions: [
-      "What is the first step to start thinking in English?",
-      "How does this habit help conversation?",
-    ],
-  },
-];
-
 export const conversations = [
   {
     id: "conv-easy-1",

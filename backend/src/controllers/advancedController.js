@@ -1,7 +1,6 @@
 import {
   conversations,
   listeningTracks,
-  readingArticles,
   speakingPrompts,
 } from "../data/advancedContentData.js";
 
@@ -65,10 +64,6 @@ export async function getListeningTracks(_req, res) {
 
 export async function getSpeakingPrompts(_req, res) {
   return res.status(200).json({ count: speakingPrompts.length, prompts: speakingPrompts });
-}
-
-export async function getReadingArticles(_req, res) {
-  return res.status(200).json({ count: readingArticles.length, articles: readingArticles });
 }
 
 export async function getConversations(req, res) {

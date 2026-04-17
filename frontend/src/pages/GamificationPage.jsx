@@ -37,12 +37,12 @@ function GamificationPage() {
 
   return (
     <main className="gamification-page">
-      <section className="vocabulary-header">
-        <h1>Gamification Center</h1>
-        <p>Theo doi diem, streak, badges va bang xep hang.</p>
-        <div className="header-links">
-          <Link to="/dashboard">Back to dashboard</Link>
-          <Link to="/exercises">Go to exercises</Link>
+      <section className="page-header">
+        <h1>🏆 Gamification Center</h1>
+        <p>Track your points, streak, badges and leaderboard rankings.</p>
+        <div className="page-header-links">
+          <Link to="/dashboard">← Dashboard</Link>
+          <Link to="/exercises">🎯 Exercises</Link>
         </div>
       </section>
 

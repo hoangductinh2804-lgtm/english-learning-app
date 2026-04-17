@@ -6,7 +6,6 @@ const LoginPage = lazy(() => import("./pages/LoginPage"));
 const RegisterPage = lazy(() => import("./pages/RegisterPage"));
 const DashboardPage = lazy(() => import("./pages/DashboardPage"));
 const VocabularyPage = lazy(() => import("./pages/VocabularyPage"));
-const GrammarPage = lazy(() => import("./pages/GrammarPage"));
 const ExercisesPage = lazy(() => import("./pages/ExercisesPage"));
 const QuizResultPage = lazy(() => import("./pages/QuizResultPage"));
 const GamificationPage = lazy(() => import("./pages/GamificationPage"));
@@ -33,14 +32,6 @@ function App() {
           element={
             <ProtectedRoute>
               <VocabularyPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/grammar"
-          element={
-            <ProtectedRoute>
-              <GrammarPage />
             </ProtectedRoute>
           }
         />

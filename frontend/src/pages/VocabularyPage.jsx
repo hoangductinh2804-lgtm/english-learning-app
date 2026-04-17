@@ -102,10 +102,12 @@ function VocabularyPage() {
 
   return (
     <main className="vocabulary-page">
-      <section className="vocabulary-header">
-        <h1>Vocabulary Learning</h1>
-        <p>Filter words by level/topic, then review quickly with flashcards.</p>
-        <Link to="/dashboard">Back to dashboard</Link>
+      <section className="page-header">
+        <h1>📚 Vocabulary Learning</h1>
+        <p>Filter words by level or topic, then practice with flashcards.</p>
+        <div className="page-header-links">
+          <Link to="/dashboard">← Dashboard</Link>
+        </div>
       </section>
 
       <section className="filters">

@@ -42,7 +42,9 @@ export default function HomePage() {
       <header className="home-header">
         <div className="profile-dot">Y</div>
         <div className="home-greeting">
-          <h1>Xin chào 👋</h1>
+          <h1>
+            Xin chào <span role="img" aria-label="vẫy tay">👋</span>
+          </h1>
           <p>Học tiếng Anh mỗi ngày, tiến bộ từng bước nhỏ.</p>
         </div>
         <button className="icon-button" type="button" aria-label="Settings">

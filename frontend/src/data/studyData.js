@@ -759,11 +759,8 @@ export const quickPractice = [
   { label: "Luyện viết", icon: "✍", path: "/writing" },
   { label: "Ngữ pháp", icon: "📚", path: "/grammar" },
   { label: "Ghép thẻ", icon: "🧩", path: "/matching" },
-  { label: "Công cụ", icon: "🧰", path: "/tools" },
-  { label: "Ngữ âm", icon: "📣", path: "/pronunciation" },
   { label: "Voice to Voice", icon: "🗣", path: "/voice" },
   { label: "Công thức", icon: "📐", path: "/formulas" },
-  { label: "Tài liệu", icon: "📄", path: "/documentation" },
 ];
 
 export const studyDecks = {

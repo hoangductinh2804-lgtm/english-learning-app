@@ -798,33 +798,6 @@ export const matchingPairs = [
   { left: "prescription", right: "don thuoc" },
 ];
 
-export const pronunciationPairs = [
-  {
-    pair: "ship / sheep",
-    tip: "Short /i/ in ship, long /i:/ in sheep.",
-    sample: "The ship is near the sheep farm.",
-    drills: ["ship", "sheep", "sit", "seat", "live", "leave"],
-  },
-  {
-    pair: "cat / cut",
-    tip: "Open /ae/ in cat, relaxed /ʌ/ in cut.",
-    sample: "The cat cut the paper.",
-    drills: ["cat", "cut", "hat", "hut", "back", "buck"],
-  },
-  {
-    pair: "rice / rise",
-    tip: "/s/ is unvoiced, /z/ is voiced.",
-    sample: "Steam rises while the rice cooks.",
-    drills: ["rice", "rise", "bus", "buzz", "face", "phase"],
-  },
-  {
-    pair: "thin / tin",
-    tip: "Use tongue between teeth for /th/ in thin.",
-    sample: "Think before you choose the right tin.",
-    drills: ["thin", "tin", "thank", "tank", "three", "tree"],
-  },
-];
-
 export const voiceScenarios = [
   {
     title: "Ordering Food",
@@ -889,41 +862,3 @@ export const voiceScenarios = [
     ],
   },
 ];
-
-export const toolsContent = {
-  writingChecklist: [
-    "Use one main idea per paragraph.",
-    "Check verb tense consistency.",
-    "Replace repeated words with synonyms.",
-    "Read your paragraph aloud once before submitting.",
-    "Check article usage: a, an, the.",
-    "Verify punctuation at sentence endings.",
-    "Use transition words between ideas.",
-  ],
-  speakingRoutine: [
-    "2 minutes: shadow a short dialogue.",
-    "3 minutes: describe your day.",
-    "3 minutes: answer one random question.",
-    "2 minutes: self-correct pronunciation.",
-  ],
-  coreVocabulary: [
-    { word: "analyze", meaning: "phan tich", category: "Writing" },
-    { word: "outline", meaning: "dan y", category: "Writing" },
-    { word: "coherent", meaning: "mach lac", category: "Writing" },
-    { word: "concise", meaning: "ngan gon", category: "Writing" },
-    { word: "paraphrase", meaning: "dien dat lai", category: "Writing" },
-    { word: "clarify", meaning: "lam ro", category: "Writing" },
-    { word: "introduction", meaning: "mo bai", category: "Writing" },
-    { word: "conclusion", meaning: "ket luan", category: "Writing" },
-    { word: "intonation", meaning: "ngu dieu", category: "Speaking" },
-    { word: "fluency", meaning: "do luu loat", category: "Speaking" },
-    { word: "hesitate", meaning: "ngap ngung", category: "Speaking" },
-    { word: "emphasize", meaning: "nhan manh", category: "Speaking" },
-    { word: "respond", meaning: "phan hoi", category: "Speaking" },
-    { word: "summarize", meaning: "tom tat", category: "Reading" },
-    { word: "inference", meaning: "suy luan", category: "Reading" },
-    { word: "keyword", meaning: "tu khoa", category: "Reading" },
-    { word: "context", meaning: "ngu canh", category: "Reading" },
-    { word: "evidence", meaning: "bang chung", category: "Reading" },
-  ],
-};

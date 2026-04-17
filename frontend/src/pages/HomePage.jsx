@@ -41,40 +41,58 @@ export default function HomePage() {
     <main className="page page-home">
       <header className="home-header">
         <div className="profile-dot">Y</div>
-        <div>
-          <h1>Hi, You</h1>
-          <span className="streak-pill">0-day streak</span>
+        <div className="home-greeting">
+          <h1>Xin chào 👋</h1>
+          <p>Học tiếng Anh mỗi ngày, tiến bộ từng bước nhỏ.</p>
         </div>
         <button className="icon-button" type="button" aria-label="Settings">
           ⚙
         </button>
       </header>
 
-      <section className="goal-card">
-        <div className="goal-ring">
+      <section className="goal-card hero-card">
+        <div className="goal-ring hero-ring">
           <span>{stats.percent}%</span>
         </div>
-        <div className="goal-content">
+        <div className="goal-content hero-content">
           <div className="goal-row">
-            <h2>Muc tieu/ngay</h2>
+            <h2>Mục tiêu hôm nay</h2>
             <button className="icon-button small" type="button" aria-label="Edit goal">
               ✎
             </button>
           </div>
-          <p>
-            {stats.today} / 20 words
-          </p>
+          <p>{stats.today} / 20 từ</p>
           <div className="progress-track">
             <div className="progress-value" style={{ width: `${stats.percent}%` }} />
           </div>
-          <Link className="start-link" to="/flashcards">
-            ▶ Bat dau
-          </Link>
+          <div className="hero-actions">
+            <Link className="start-link" to="/flashcards">
+              Bắt đầu ngay
+            </Link>
+            <Link className="secondary-link" to="/listening">
+              Luyện nghe
+            </Link>
+          </div>
         </div>
       </section>
 
+      <section className="stat-strip">
+        <article>
+          <span>📚</span>
+          <p>{categories.length} chủ đề</p>
+        </article>
+        <article>
+          <span>🧠</span>
+          <p>{stats.remembered} từ đã nhớ</p>
+        </article>
+        <article>
+          <span>🎯</span>
+          <p>{stats.total} từ tổng</p>
+        </article>
+      </section>
+
       <section>
-        <h3 className="section-title">Luyen nhanh</h3>
+        <h3 className="section-title">Luyện nhanh</h3>
         <div className="quick-grid">
           {quickPractice.map((item) => (
             <Link className="quick-card" key={item.label} to={item.path}>
@@ -86,17 +104,17 @@ export default function HomePage() {
       </section>
 
       <section className="today-section">
-        <h3 className="section-title">Hoc tap hom nay</h3>
+        <h3 className="section-title">Học tập hôm nay</h3>
         <div className="today-grid">
           <article>
-            <div className="badge">◔</div>
+            <div className="badge">📈</div>
             <p>
-              Da nho {stats.remembered}/{stats.total} tu
+              Đã nhớ {stats.remembered}/{stats.total} từ
             </p>
           </article>
           <article>
-            <div className="badge">A</div>
-            <p>{categories.length} chu de san sang</p>
+            <div className="badge">🚀</div>
+            <p>{categories.length} chủ đề sẵn sàng</p>
           </article>
         </div>
       </section>

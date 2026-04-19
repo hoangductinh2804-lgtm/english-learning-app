@@ -69,21 +69,60 @@ function readStore() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) {
-      return { remembered: {}, liked: {} };
+      return { remembered: {}, liked: {}, activityDays: {} };
     }
 
     const parsed = JSON.parse(raw);
     return {
       remembered: parsed.remembered || {},
       liked: parsed.liked || {},
+      activityDays: parsed.activityDays || {},
     };
   } catch (_error) {
-    return { remembered: {}, liked: {} };
+    return { remembered: {}, liked: {}, activityDays: {} };
   }
 }
 
 function writeStore(nextStore) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(nextStore));
+}
+
+function toDateKey(date = new Date()) {
+  const year = date.getFullYear();
+  const month = `${date.getMonth() + 1}`.padStart(2, "0");
+  const day = `${date.getDate()}`.padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function markTodayActivity(store) {
+  const key = toDateKey();
+  store.activityDays = store.activityDays || {};
+  store.activityDays[key] = true;
+}
+
+function getStreakDaysFromMap(activityDays = {}) {
+  const keys = Object.keys(activityDays)
+    .filter((key) => activityDays[key])
+    .sort((a, b) => (a < b ? 1 : -1));
+
+  if (keys.length === 0) {
+    return 0;
+  }
+
+  let streak = 0;
+  const cursor = new Date();
+  cursor.setHours(0, 0, 0, 0);
+
+  for (let index = 0; index < 3650; index += 1) {
+    const key = toDateKey(cursor);
+    if (!activityDays[key]) {
+      break;
+    }
+    streak += 1;
+    cursor.setDate(cursor.getDate() - 1);
+  }
+
+  return streak;
 }
 
 export function getLearningStore() {
@@ -93,6 +132,7 @@ export function getLearningStore() {
 export function toggleRemembered(wordId) {
   const store = readStore();
   store.remembered[wordId] = !store.remembered[wordId];
+  markTodayActivity(store);
   writeStore(store);
   return store;
 }
@@ -100,8 +140,14 @@ export function toggleRemembered(wordId) {
 export function toggleLiked(wordId) {
   const store = readStore();
   store.liked[wordId] = !store.liked[wordId];
+  markTodayActivity(store);
   writeStore(store);
   return store;
+}
+
+export function getCurrentStreakDays() {
+  const store = readStore();
+  return getStreakDaysFromMap(store.activityDays || {});
 }
 
 export async function loadCategoryCatalog() {

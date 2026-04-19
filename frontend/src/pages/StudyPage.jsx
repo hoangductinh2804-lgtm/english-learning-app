@@ -49,7 +49,10 @@ export default function StudyPage() {
   const currentId = currentWord?._id;
   const isRemembered = currentId ? !!store.remembered[currentId] : false;
   const isLiked = currentId ? !!store.liked[currentId] : false;
-  const imageSrc = currentWord?.image || (currentWord?.word ? `/images/vocabulary-cards/${slugify(currentWord.word)}.svg` : category?.cover || "");
+  const imageSrc =
+    currentWord?.image ||
+    currentWord?.fallbackImage ||
+    (currentWord?.word ? `/images/vocabulary-cards/${slugify(currentWord.word)}.svg` : category?.cover || "");
 
   useEffect(() => {
     setIndex(0);
@@ -110,33 +113,60 @@ export default function StudyPage() {
         </span>
       </div>
 
-      <article className="flashcard-screen" onClick={() => setShowMeaning((current) => !current)}>
-        <button className="like-btn" onClick={likeCurrent} type="button" aria-label="Like card">
+      <article
+        className={`flashcard-screen ${showMeaning ? "is-flipped" : ""}`}
+        onClick={() => setShowMeaning((current) => !current)}
+      >
+        <button
+          className="like-btn"
+          onClick={(event) => {
+            event.stopPropagation();
+            likeCurrent();
+          }}
+          type="button"
+          aria-label="Like card"
+        >
           {isLiked ? "❤" : "♡"}
         </button>
-        {imageSrc ? (
-          <img
-            alt={currentWord?.word || "flashcard"}
-            className="flashcard-image"
-            src={imageSrc}
-            onError={(event) => {
-              if (category?.cover && event.currentTarget.src !== category.cover) {
-                event.currentTarget.src = category.cover;
-              }
-            }}
-          />
-        ) : null}
-        <h2>{currentWord?.word || "No word"}</h2>
-        {showMeaning && currentWord ? (
-          <div className="word-meaning-block">
-            <p className="word-ipa">{currentWord.ipa || ""}</p>
-            <p className="word-meaning">{currentWord.meaning}</p>
-            {currentWord.example ? <p className="word-example">{currentWord.example}</p> : null}
+        <div className="flashcard-3d">
+          <div className="flashcard-face flashcard-front">
+            {imageSrc ? (
+              <img
+                alt={currentWord?.word || "flashcard"}
+                className="flashcard-image"
+                src={imageSrc}
+                onError={(event) => {
+                  if (currentWord?.fallbackImage && event.currentTarget.src !== currentWord.fallbackImage) {
+                    event.currentTarget.src = currentWord.fallbackImage;
+                    return;
+                  }
+
+                  if (category?.cover && event.currentTarget.src !== category.cover) {
+                    event.currentTarget.src = category.cover;
+                  }
+                }}
+              />
+            ) : null}
+            <h2>{currentWord?.word || "No word"}</h2>
+            <p className="word-ipa">{currentWord?.ipa || ""}</p>
+            <p className="word-meaning hint">Chạm để lật thẻ</p>
           </div>
-        ) : (
-          <p className="word-meaning hint">Chạm vào thẻ để hiện nghĩa</p>
-        )}
-        <button className="speak-btn" onClick={speakCurrent} type="button" aria-label="Speak word">
+
+          <div className="flashcard-face flashcard-back">
+            <h3>{currentWord?.word || "No word"}</h3>
+            <p className="word-meaning">{currentWord?.meaning || ""}</p>
+          </div>
+        </div>
+
+        <button
+          className="speak-btn"
+          onClick={(event) => {
+            event.stopPropagation();
+            speakCurrent();
+          }}
+          type="button"
+          aria-label="Speak word"
+        >
           🔊
         </button>
       </article>

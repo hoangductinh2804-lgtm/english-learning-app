@@ -2,7 +2,7 @@ export const listeningLessons = [
   {
     id: "daily-life-listening",
     title: "Morning Routine Conversation",
-    topic: "Daily Life",
+    topic: "Đời sống hàng ngày",
     script: [
       "A: What time do you wake up on weekdays?",
       "B: I usually wake up at six, stretch for five minutes, and make tea.",
@@ -46,7 +46,7 @@ export const listeningLessons = [
   {
     id: "food-drink-listening",
     title: "At The Cafe",
-    topic: "Food & Drink",
+    topic: "Đồ ăn & Thức uống",
     script: [
       "A: Can I get a grilled chicken sandwich and an iced coffee?",
       "B: Sure. Would you like anything on the side?",
@@ -90,7 +90,7 @@ export const listeningLessons = [
   {
     id: "jobs-listening",
     title: "Team Meeting Update",
-    topic: "Jobs & Occupations",
+    topic: "Nghề nghiệp",
     script: [
       "Manager: Thanks for joining the weekly meeting.",
       "Lina: I finished the design draft and sent it to the marketing team.",
@@ -132,7 +132,7 @@ export const listeningLessons = [
   {
     id: "travel-listening",
     title: "At The Airport",
-    topic: "Travel",
+    topic: "Du lịch",
     script: [
       "Agent: Welcome to the check-in counter. May I see your passport?",
       "Tom: Here it is. I have one suitcase and a carry-on bag.",
@@ -174,7 +174,7 @@ export const listeningLessons = [
   {
     id: "shopping-listening",
     title: "Shopping At The Market",
-    topic: "Shopping",
+    topic: "Mua sắm",
     script: [
       "Vendor: Welcome! Can I help you find anything?",
       "Sarah: Yes, I am looking for fresh vegetables.",
@@ -216,7 +216,7 @@ export const listeningLessons = [
   {
     id: "restaurant-listening",
     title: "Restaurant Ordering",
-    topic: "Food & Drink",
+    topic: "Đồ ăn & Thức uống",
     script: [
       "Waiter: Good evening. How many people are eating?",
       "Guest: There are four of us. Do you have a table by the window?",
@@ -258,7 +258,7 @@ export const listeningLessons = [
   {
     id: "school-listening",
     title: "Classroom Instructions",
-    topic: "Education",
+    topic: "Trường học",
     script: [
       "Teacher: Good morning students. Today we have a quiz.",
       "Student: How much time do we have?",
@@ -301,7 +301,7 @@ export const listeningLessons = [
   {
     id: "travel-listening",
     title: "At The Airport",
-    topic: "Travel",
+    topic: "Du lịch",
     script: [
       "Agent: Welcome to the check-in counter. May I see your passport?",
       "Tom: Here it is. I have one suitcase and a carry-on bag.",
@@ -343,7 +343,7 @@ export const listeningLessons = [
   {
     id: "shopping-listening",
     title: "Shopping At The Market",
-    topic: "Shopping",
+    topic: "Mua sắm",
     script: [
       "Vendor: Welcome! Can I help you find anything?",
       "Sarah: Yes, I am looking for fresh vegetables.",
@@ -385,7 +385,7 @@ export const listeningLessons = [
   {
     id: "health-listening",
     title: "At The Clinic",
-    topic: "Health",
+    topic: "Sức khỏe",
     script: [
       "Receptionist: Good morning. How can I help you?",
       "Anna: I have a sore throat and a fever since last night.",
@@ -427,7 +427,7 @@ export const listeningLessons = [
   {
     id: "family-listening",
     title: "Weekend Family Plans",
-    topic: "Family",
+    topic: "Gia đình",
     script: [
       "Mom: We have a free weekend. What should we do?",
       "Dad: Let's visit grandma on Saturday morning.",
@@ -469,7 +469,7 @@ export const listeningLessons = [
   {
     id: "clothes-listening",
     title: "Shopping For Clothes",
-    topic: "Clothes & Fashion",
+    topic: "Quần áo & Thời trang",
     script: [
       "Shop Assistant: Hello. Can I help you find something?",
       "Mia: Yes, I need a jacket and a pair of shoes.",
@@ -511,7 +511,7 @@ export const listeningLessons = [
   {
     id: "technology-listening",
     title: "Technology At Work",
-    topic: "Technology",
+    topic: "Công nghệ",
     script: [
       "Anna uses a computer every day at work.",
       "She checks email, opens an app, and joins video meetings online.",
@@ -537,7 +537,7 @@ export const listeningLessons = [
   {
     id: "environment-listening",
     title: "Protecting The Environment",
-    topic: "Environment",
+    topic: "Môi trường",
     script: [
       "Our city wants cleaner air and less pollution.",
       "People recycle plastic bottles and save water at home.",
@@ -563,7 +563,7 @@ export const listeningLessons = [
   {
     id: "emotions-listening",
     title: "How Are You Feeling?",
-    topic: "Emotions",
+    topic: "Cảm xúc",
     script: [
       "Mai feels excited before her trip.",
       "Her brother feels tired after school but relaxed after listening to music.",
@@ -589,7 +589,7 @@ export const listeningLessons = [
   {
     id: "business-listening",
     title: "Business Meeting",
-    topic: "Business",
+    topic: "Kinh doanh",
     script: [
       "The company held a meeting to discuss sales and profit.",
       "The client wanted a clear contract before starting the project.",

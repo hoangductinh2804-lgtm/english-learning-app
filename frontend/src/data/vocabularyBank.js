@@ -3,8 +3,8 @@ import { b2VocabularyExtras } from "./vocabularyBankB2Extras.js";
 const topicVocabularyBank = [
   {
     slug: "daily-life",
-    topic: "Daily Life",
-    title: "Daily Life",
+    topic: "Đời sống hàng ngày",
+    title: "Đời sống hàng ngày",
     icon: "🧺",
     cover: "/images/topics/daily-life.svg",
     description: "Từ vựng về sinh hoạt hằng ngày, thói quen và hành động cơ bản",
@@ -42,8 +42,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "food-drink",
-    topic: "Food & Drink",
-    title: "Food & Drink",
+    topic: "Đồ ăn & Thức uống",
+    title: "Đồ ăn & Thức uống",
     icon: "🍔",
     cover: "/images/topics/food-drink.svg",
     description: "Tên món ăn, đồ uống và hoạt động trong quán ăn",
@@ -81,8 +81,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "clothes-fashion",
-    topic: "Clothes & Fashion",
-    title: "Clothes & Fashion",
+    topic: "Quần áo & Thời trang",
+    title: "Quần áo & Thời trang",
     icon: "👕",
     cover: "/images/topics/jobs-occupations.svg",
     description: "Từ vựng về quần áo, phụ kiện và mua sắm thời trang",
@@ -120,8 +120,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "jobs-occupations",
-    topic: "Jobs & Occupations",
-    title: "Jobs & Occupations",
+    topic: "Nghề nghiệp",
+    title: "Nghề nghiệp",
     icon: "💼",
     cover: "/images/topics/jobs-occupations.svg",
     description: "Nghề nghiệp, công việc, văn phòng và môi trường làm việc",
@@ -159,8 +159,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "travel",
-    topic: "Travel",
-    title: "Travel",
+    topic: "Du lịch",
+    title: "Du lịch",
     icon: "✈️",
     cover: "/images/topics/daily-life.svg",
     description: "Từ vựng về đi lại, sân bay, khách sạn và du lịch",
@@ -198,8 +198,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "shopping",
-    topic: "Shopping",
-    title: "Shopping",
+    topic: "Mua sắm",
+    title: "Mua sắm",
     icon: "🛒",
     cover: "/images/topics/food-drink.svg",
     description: "Từ vựng về mua sắm, giá cả, cửa hàng và chợ",
@@ -237,8 +237,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "health",
-    topic: "Health",
-    title: "Health",
+    topic: "Sức khỏe",
+    title: "Sức khỏe",
     icon: "🩺",
     cover: "/images/topics/jobs-occupations.svg",
     description: "Từ vựng về sức khỏe, triệu chứng, bệnh viện và thói quen tốt",
@@ -276,8 +276,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "school",
-    topic: "Education",
-    title: "School",
+    topic: "Trường học",
+    title: "Trường học",
     icon: "🎓",
     cover: "/images/topics/jobs-occupations.svg",
     description: "Từ vựng về lớp học, trường học, bài tập và học tập",
@@ -315,8 +315,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "family",
-    topic: "Family",
-    title: "Family",
+    topic: "Gia đình",
+    title: "Gia đình",
     icon: "👪",
     cover: "/images/topics/daily-life.svg",
     description: "Từ vựng về gia đình, người thân và sinh hoạt cùng nhau",
@@ -354,8 +354,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "technology",
-    topic: "Technology",
-    title: "Technology",
+    topic: "Công nghệ",
+    title: "Công nghệ",
     icon: "💻",
     cover: "/images/topics/jobs-occupations.svg",
     description: "Từ vựng về thiết bị số, internet và phần mềm",
@@ -393,8 +393,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "environment",
-    topic: "Environment",
-    title: "Environment",
+    topic: "Môi trường",
+    title: "Môi trường",
     icon: "🌿",
     cover: "/images/topics/daily-life.svg",
     description: "Từ vựng về môi trường, ô nhiễm và bảo vệ thiên nhiên",
@@ -432,8 +432,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "business",
-    topic: "Business",
-    title: "Business",
+    topic: "Kinh doanh",
+    title: "Kinh doanh",
     icon: "📊",
     cover: "/images/topics/jobs-occupations.svg",
     description: "Từ vựng về công ty, khách hàng, hợp đồng và doanh số",
@@ -471,8 +471,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "science",
-    topic: "Science",
-    title: "Science",
+    topic: "Khoa học",
+    title: "Khoa học",
     icon: "🔬",
     cover: "/images/topics/jobs-occupations.svg",
     description: "Từ vựng về khoa học, phòng thí nghiệm và khám phá",
@@ -510,8 +510,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "emotions",
-    topic: "Emotions",
-    title: "Emotions",
+    topic: "Cảm xúc",
+    title: "Cảm xúc",
     icon: "😊",
     cover: "/images/topics/daily-life.svg",
     description: "Từ vựng về cảm xúc và trạng thái tinh thần",
@@ -549,8 +549,8 @@ const topicVocabularyBank = [
   },
   {
     slug: "nature",
-    topic: "Nature",
-    title: "Nature",
+    topic: "Thiên nhiên",
+    title: "Thiên nhiên",
     icon: "🌳",
     cover: "/images/topics/daily-life.svg",
     description: "Từ vựng về thiên nhiên, động vật và cảnh quan",
@@ -597,20 +597,87 @@ function slugify(text) {
     .replace(/-+/g, "-");
 }
 
-function getWordImage(word, topicCover) {
-  const image = `/images/vocabulary-cards/${slugify(word)}.svg`;
-  return image;
+function getTopicVisualConfig(topicSlug) {
+  const configs = {
+    "daily-life": { bgA: "#4aa9ff", bgB: "#2d7de9", accent: "#f6f9ff", tag: "DAILY" },
+    "food-drink": { bgA: "#4abf9f", bgB: "#2e9f82", accent: "#f4fffb", tag: "FOOD" },
+    "clothes-fashion": { bgA: "#5fa0ff", bgB: "#3f73dc", accent: "#f5f8ff", tag: "STYLE" },
+    "jobs-occupations": { bgA: "#6f95ff", bgB: "#4a67ca", accent: "#f5f7ff", tag: "WORK" },
+    travel: { bgA: "#59b3ff", bgB: "#317fdd", accent: "#f4f9ff", tag: "TRAVEL" },
+    shopping: { bgA: "#56b5d7", bgB: "#2e84b5", accent: "#f2fbff", tag: "SHOP" },
+    health: { bgA: "#49bfa3", bgB: "#2f9f86", accent: "#f2fffa", tag: "HEALTH" },
+    school: { bgA: "#5ea4ff", bgB: "#3f79de", accent: "#f4f8ff", tag: "SCHOOL" },
+    family: { bgA: "#5cb6da", bgB: "#3e8fba", accent: "#f2f9ff", tag: "FAMILY" },
+    technology: { bgA: "#4b9cff", bgB: "#2f6fd3", accent: "#f3f7ff", tag: "TECH" },
+    environment: { bgA: "#52b48f", bgB: "#358c6b", accent: "#f2fff9", tag: "ECO" },
+    business: { bgA: "#628fe8", bgB: "#3e67be", accent: "#f4f7ff", tag: "BIZ" },
+    science: { bgA: "#57a2df", bgB: "#357ab9", accent: "#f2f7ff", tag: "SCI" },
+    emotions: { bgA: "#5e9fe3", bgB: "#3f74bf", accent: "#f2f7ff", tag: "EMO" },
+    nature: { bgA: "#56b89a", bgB: "#368f76", accent: "#f2fff9", tag: "NATURE" },
+  };
+
+  return configs[topicSlug] || { bgA: "#5ea1ff", bgB: "#3f78db", accent: "#f4f8ff", tag: "WORD" };
 }
 
-function normalizeWord(topicSlug, wordRecord, index, topicCover) {
+function createWordIllustration(word, topicSlug) {
+  const normalizedWord = (word || "word").trim();
+  const shortWord = normalizedWord.length > 18 ? `${normalizedWord.slice(0, 18)}...` : normalizedWord;
+  const cfg = getTopicVisualConfig(topicSlug);
+
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='560' viewBox='0 0 800 560'>
+  <defs>
+    <linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='${cfg.bgA}'/>
+      <stop offset='100%' stop-color='${cfg.bgB}'/>
+    </linearGradient>
+    <linearGradient id='card' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='rgba(255,255,255,0.22)'/>
+      <stop offset='100%' stop-color='rgba(255,255,255,0.12)'/>
+    </linearGradient>
+  </defs>
+  <rect width='800' height='560' rx='36' fill='url(#bg)'/>
+  <rect x='56' y='52' width='688' height='318' rx='26' fill='url(#card)'/>
+  <g opacity='0.2'>
+    <circle cx='100' cy='88' r='8' fill='#ffffff'/>
+    <circle cx='144' cy='90' r='5' fill='#ffffff'/>
+    <circle cx='184' cy='84' r='6' fill='#ffffff'/>
+  </g>
+  <g transform='translate(118 118)'>
+    <circle cx='68' cy='66' r='42' fill='${cfg.accent}'/>
+    <rect x='28' y='112' width='80' height='116' rx='28' fill='${cfg.accent}'/>
+    <rect x='8' y='144' width='32' height='82' rx='16' fill='${cfg.accent}'/>
+    <rect x='96' y='144' width='32' height='82' rx='16' fill='${cfg.accent}'/>
+  </g>
+  <rect x='300' y='132' width='370' height='170' rx='24' fill='rgba(255,255,255,0.18)'/>
+  <text x='484' y='198' text-anchor='middle' font-size='70' font-family='Arial, sans-serif' font-weight='800' fill='${cfg.accent}'>${cfg.tag}</text>
+  <text x='484' y='250' text-anchor='middle' font-size='34' font-family='Arial, sans-serif' font-weight='700' fill='${cfg.accent}' opacity='0.96'>${shortWord}</text>
+  <rect x='56' y='406' width='688' height='104' rx='24' fill='rgba(255,255,255,0.18)'/>
+  <text x='400' y='470' text-anchor='middle' font-size='52' font-family='Arial, sans-serif' font-weight='800' fill='${cfg.accent}'>${shortWord}</text>
+</svg>`;
+
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+}
+
+function getWordImage(word, topicSlug) {
+  const localSvg = `/images/vocabulary-cards/${slugify(word)}.svg`;
+  return localSvg;
+}
+
+function normalizeWord(topicSlug, wordRecord, index) {
   const [word, ipa, meaning, example, imageHint] = wordRecord;
+  const hasHttpImage = typeof imageHint === "string" && imageHint.startsWith("http");
+  const hasDataImage = typeof imageHint === "string" && imageHint.startsWith("data:image/");
+  const fallbackIllustration = createWordIllustration(word, topicSlug);
+  const image = hasHttpImage || hasDataImage ? imageHint : getWordImage(word, topicSlug);
+
   return {
     _id: `${topicSlug}-${index}-${slugify(word)}`,
     word,
     ipa,
     meaning,
     example,
-    image: imageHint ? `/images/vocabulary-cards/${imageHint}.svg` : getWordImage(word, topicCover),
+    image,
+    fallbackImage: fallbackIllustration,
   };
 }
 
@@ -630,9 +697,48 @@ function mergeTopicWords(topicSlug, topicWords) {
   });
 }
 
+function ensureMinimumWords(topicSlug, topicWords, globalPool, minWords = 100) {
+  if (topicWords.length >= minWords) {
+    return topicWords;
+  }
+
+  const seen = new Set(topicWords.map((item) => slugify(item[0])));
+  const expanded = [...topicWords];
+
+  for (let index = 0; index < globalPool.length && expanded.length < minWords; index += 1) {
+    const record = globalPool[index];
+    const key = slugify(record[0]);
+    if (seen.has(key)) {
+      continue;
+    }
+
+    seen.add(key);
+    expanded.push(record);
+  }
+
+  return expanded;
+}
+
 export function buildCategories() {
+  const mergedByTopic = Object.fromEntries(
+    topicVocabularyBank.map((topic) => [topic.slug, mergeTopicWords(topic.slug, topic.words)])
+  );
+
+  const globalPool = [];
+  const globalSeen = new Set();
+  topicVocabularyBank.forEach((topic) => {
+    const words = mergedByTopic[topic.slug] || [];
+    words.forEach((record) => {
+      const key = slugify(record[0]);
+      if (!globalSeen.has(key)) {
+        globalSeen.add(key);
+        globalPool.push(record);
+      }
+    });
+  });
+
   return topicVocabularyBank.map((topic) => {
-    const mergedWords = mergeTopicWords(topic.slug, topic.words);
+    const mergedWords = ensureMinimumWords(topic.slug, mergedByTopic[topic.slug] || [], globalPool, 100);
 
     return {
       slug: topic.slug,
@@ -643,7 +749,7 @@ export function buildCategories() {
       level: topic.level || "B2",
       flashcardsTotal: mergedWords.length,
       listeningTotal: 1,
-      words: mergedWords.map((wordRecord, index) => normalizeWord(topic.slug, wordRecord, index, topic.cover)),
+      words: mergedWords.map((wordRecord, index) => normalizeWord(topic.slug, wordRecord, index)),
     };
   });
 }

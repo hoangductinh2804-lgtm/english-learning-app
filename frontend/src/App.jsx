@@ -1,14 +1,11 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import BottomNav from "./components/BottomNav";
 import CategoryPage from "./pages/CategoryPage";
-import DocumentationPage from "./pages/features/DocumentationPage";
 import FormulasPage from "./pages/features/FormulasPage";
 import GrammarLabPage from "./pages/features/GrammarLabPage";
 import ListeningPracticePage from "./pages/features/ListeningPracticePage";
 import MatchingGamePage from "./pages/features/MatchingGamePage";
-import PronunciationPage from "./pages/features/PronunciationPage";
 import ReadingPracticePage from "./pages/features/ReadingPracticePage";
-import ToolsPage from "./pages/features/ToolsPage";
 import VoiceToVoicePage from "./pages/features/VoiceToVoicePage";
 import WritingPage from "./pages/features/WritingPage";
 import HomePage from "./pages/HomePage";
@@ -27,11 +24,8 @@ function AppShell() {
           <Route path="/writing" element={<WritingPage />} />
           <Route path="/grammar" element={<GrammarLabPage />} />
           <Route path="/matching" element={<MatchingGamePage />} />
-          <Route path="/tools" element={<ToolsPage />} />
-          <Route path="/pronunciation" element={<PronunciationPage />} />
           <Route path="/voice" element={<VoiceToVoicePage />} />
           <Route path="/formulas" element={<FormulasPage />} />
-          <Route path="/documentation" element={<DocumentationPage />} />
           <Route path="/study/:slug" element={<StudyPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

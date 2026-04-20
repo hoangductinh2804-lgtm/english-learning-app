@@ -249,6 +249,216 @@ input {
   font-weight: 800;
 }
 
+.duo-home-header {
+  margin-bottom: 16px;
+}
+
+.duo-home-header .home-greeting h1 {
+  font-size: 30px;
+}
+
+.duo-home-header .home-greeting p {
+  color: #4f5c87;
+  line-height: 1.4;
+}
+
+.energy-pill {
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 700;
+  color: #7f4300;
+  background: linear-gradient(130deg, #ffe09f, #ffca70);
+  box-shadow: 0 8px 16px rgba(205, 122, 14, 0.25);
+}
+
+.duo-hero {
+  background: linear-gradient(145deg, #179e57 0%, #2ebf66 50%, #58cf75 100%);
+}
+
+.duo-hero-ring {
+  border-color: rgba(255, 255, 255, 0.48);
+  background: rgba(11, 58, 26, 0.28);
+}
+
+.duo-hero-ring span {
+  font-size: 22px;
+}
+
+.duo-hero-content h2 {
+  font-size: 24px;
+}
+
+.duo-hero-content p {
+  line-height: 1.45;
+}
+
+.duo-hero-actions .secondary-link {
+  color: #ecfff2;
+}
+
+.duo-stat-strip article {
+  border-radius: 18px;
+}
+
+.duo-level-section {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff, #f3f6ff);
+  border: 1px solid #dce3f7;
+}
+
+.duo-level-section .section-title {
+  margin-top: 0;
+}
+
+.duo-level-switcher {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.duo-level-btn {
+  border: 1px solid #d0d8f2;
+  border-radius: 12px;
+  background: #f8f9ff;
+  color: #374677;
+  font-weight: 700;
+  padding: 10px 8px;
+  font-size: 12px;
+}
+
+.duo-level-btn.active {
+  background: #2d9756;
+  color: #fff;
+  border-color: #2d9756;
+  box-shadow: 0 10px 16px rgba(34, 126, 73, 0.25);
+}
+
+.duo-track-copy {
+  margin: 10px 0 0;
+  color: #43507f;
+  line-height: 1.45;
+}
+
+.duo-path-section {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 22px;
+  border: 1px solid #dbe0f4;
+  background: linear-gradient(180deg, #f9fbff, #edf2ff);
+}
+
+.duo-path-section .section-title {
+  margin-top: 0;
+}
+
+.duo-path-list {
+  display: grid;
+  gap: 12px;
+}
+
+.duo-node {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.duo-node.right {
+  margin-left: 24px;
+}
+
+.duo-node.left {
+  margin-right: 24px;
+}
+
+.duo-node.locked {
+  opacity: 0.75;
+}
+
+.duo-node-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(160deg, #2a7ee8, #2656c8);
+  box-shadow: 0 10px 14px rgba(26, 60, 150, 0.24);
+}
+
+.duo-node-card {
+  background: #fff;
+  border: 1px solid #dbe2fb;
+  border-radius: 16px;
+  padding: 10px 12px;
+  box-shadow: 0 10px 18px rgba(43, 59, 116, 0.1);
+}
+
+.duo-node-kicker {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #50609c;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.duo-node-card h4 {
+  margin: 4px 0;
+  font-size: 20px;
+}
+
+.duo-node-card p {
+  margin: 4px 0 8px;
+  color: #4f5b8c;
+}
+
+.duo-node-link {
+  margin-top: 10px;
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #165e36;
+  background: #dbf8e8;
+}
+
+.duo-node-lock {
+  margin-top: 10px;
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #6f7491;
+  background: #edf0fb;
+}
+
+.duo-topics {
+  margin-top: 12px;
+}
+
+.duo-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.duo-topic-chip {
+  padding: 12px 10px;
+  border-radius: 14px;
+  border: 1px solid #dfe4f8;
+  background: #fff;
+  box-shadow: 0 8px 15px rgba(48, 62, 117, 0.09);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
 .quick-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

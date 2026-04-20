@@ -862,3 +862,45 @@ export const voiceScenarios = [
     ],
   },
 ];
+
+export const learningTracks = [
+  {
+    id: "newbie-track",
+    level: "newbie",
+    title: "Nguoi moi bat dau",
+    description: "Xay nen tang tu vung, phat am, va mau cau co ban.",
+    units: [
+      { id: "newbie-daily-life", topicSlug: "daily-life", topic: "Sinh hoat hang ngay", focus: "chao hoi + gio giac", xp: 20 },
+      { id: "newbie-food-drink", topicSlug: "food-drink", topic: "Do an va thuc uong", focus: "goi mon + hoi gia", xp: 20 },
+      { id: "newbie-family", topicSlug: "family", topic: "Gia dinh", focus: "gioi thieu ban than", xp: 25 },
+      { id: "newbie-school", topicSlug: "school", topic: "Truong hoc", focus: "lop hoc + bai tap", xp: 25 },
+      { id: "newbie-shopping", topicSlug: "shopping", topic: "Mua sam", focus: "hoi kich co + thanh toan", xp: 30 },
+    ],
+  },
+  {
+    id: "intermediate-track",
+    level: "intermediate",
+    title: "Nguoi hoc dang tien bo",
+    description: "Mo rong kha nang giao tiep trong cong viec va di chuyen.",
+    units: [
+      { id: "intermediate-travel", topicSlug: "travel", topic: "Du lich", focus: "san bay + khach san", xp: 30 },
+      { id: "intermediate-jobs", topicSlug: "jobs-occupations", topic: "Nghe nghiep", focus: "hop nhom + bao cao", xp: 35 },
+      { id: "intermediate-health", topicSlug: "health", topic: "Suc khoe", focus: "mo ta trieu chung", xp: 35 },
+      { id: "intermediate-clothes", topicSlug: "clothes-fashion", topic: "Trang phuc", focus: "mo ta phong cach", xp: 40 },
+      { id: "intermediate-daily-life", topicSlug: "daily-life", topic: "Routine nang cao", focus: "ke hoach va thoi quen", xp: 40 },
+    ],
+  },
+  {
+    id: "advanced-track",
+    level: "advanced",
+    title: "Nguoi hoc lau nam",
+    description: "Tang toc ky nang hoc thuat, giao tiep va tranh luan theo chu de.",
+    units: [
+      { id: "advanced-jobs", topicSlug: "jobs-occupations", topic: "Cong viec chuyen sau", focus: "thuyet trinh + phan bien", xp: 45 },
+      { id: "advanced-school", topicSlug: "school", topic: "Hoc tap hoc thuat", focus: "viet doan va tong hop", xp: 45 },
+      { id: "advanced-travel", topicSlug: "travel", topic: "Tinh huong du lich phuc tap", focus: "xu ly su co", xp: 50 },
+      { id: "advanced-health", topicSlug: "health", topic: "Suc khoe va loi song", focus: "thao luan va dua ly do", xp: 50 },
+      { id: "advanced-shopping", topicSlug: "shopping", topic: "Dam phan gia tri", focus: "so sanh va danh gia", xp: 55 },
+    ],
+  },
+];
